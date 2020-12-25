@@ -1,9 +1,11 @@
-.metadata
-SDK.log
-bsp
-hw
-sw
-xilsw
-sw.elf
-xsct.log
-RemoteSystemsTempFiles
+# Comment everything
+
+#.metadata
+#SDK.log
+#bsp
+#hw
+#sw
+#xilsw
+#sw.elf
+#xsct.log
+#RemoteSystemsTempFiles
