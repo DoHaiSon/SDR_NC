@@ -1,0 +1,6 @@
+Software/Software_for_BladeRF/bladeRF/build/*
+Software/GnuRadio_Block_NC/gr-CogNC/build/*
+Software/GnuRadio_Block_NC/gr-display/build/*
+Software/GnuRadio_Block_NC/gr-DNC/build/*
+Software/GnuRadio_Block_NC/gr-DNC2/build/*
+Software/GnuRadio_Block_NC/gr-s4a/build/*

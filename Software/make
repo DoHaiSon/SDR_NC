@@ -1,0 +1,34 @@
+cd Software_for_BladeRF/bladeRF
+./make
+
+sleep 10
+
+cd ..
+cd ..
+
+cd GnuRadio_Block_NC/gr-CogNC
+./make
+
+sleep 10
+
+cd ..
+
+cd gr-display
+./make
+
+sleep 10
+
+cd ..
+
+cd gr-DNC
+./make
+
+cd ..
+
+cd gr-DNC2
+./make
+
+cd ..
+
+cd gr-s4a
+./make
