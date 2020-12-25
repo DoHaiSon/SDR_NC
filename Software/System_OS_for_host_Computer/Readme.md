@@ -8,7 +8,7 @@ Link Download: https://drive.google.com/file/d/1qtWKffJmvlreYkj4rgPaUUaj9estO_Np
 
 ## Info:
 
-GnuRadio: 3.7.11 (Full hardward support from 2016).
+GnuRadio: 3.7.11 (Full hardware support from 2016).
 Ubuntu: Ubuntu Desktop 16.04 LTS.
 
 ## Usage:
