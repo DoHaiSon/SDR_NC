@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<block>
+  <name>Image Vector Source</name>
+  <key>DNC2_image_vector_source</key>
+  <category>DNC2</category>
+  <import>import DNC2</import>
+  <make>DNC2.image_vector_source($filename, $image_size, $packet_size, $repeat, $channel_coding, $vlen, $tags)</make>
+
+  	<param>
+		<name>File</name>
+		<key>filename</key>
+		<type>file_open</type>
+	</param>
+	<param>
+		<name>Image Size (m*n)</name>
+		<key>image_size</key>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Packet Size</name>
+		<key>packet_size</key>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Tags</name>
+		<key>tags</key>
+		<value>[]</value>
+		<type>raw</type>
+	</param>
+	<param>
+		<name>Repeat</name>
+		<key>repeat</key>
+		<value>False</value>
+		<type>enum</type>
+		<option>
+			<name>Yes</name>
+			<key>True</key>
+		</option>
+		<option>
+			<name>No</name>
+			<key>False</key>
+		</option>
+	</param>
+	<param>
+		<name>Channel Coding</name>
+		<key>channel_coding</key>
+		<value>0</value>
+		<type>enum</type>
+		<option>
+			<name>Yes</name>
+			<key>1</key>
+		</option>
+		<option>
+			<name>No</name>
+			<key>0</key>
+		</option>
+	</param>
+	<param>
+		<name>Vec Length</name>
+		<key>vlen</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<check>$vlen &gt; 0</check>
+	<source>
+		<name>out</name>
+		<type>byte</type>
+		<vlen>$vlen</vlen>
+	</source>
+</block>

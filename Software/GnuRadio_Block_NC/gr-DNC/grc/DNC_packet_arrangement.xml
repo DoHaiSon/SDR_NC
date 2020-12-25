@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<block>
+  <name>Packet Arrangement</name>
+  <key>DNC_packet_arrangement</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.packet_arrangement($buffer_size, $packet_size, $nodeA_id, $nodeB_id, $node)</make>
+  <param>
+    <name>Buffer Size</name>
+    <key>buffer_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Packet Size</name>
+    <key>packet_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>NodeA ID</name>
+    <key>nodeA_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>NodeB ID</name>
+    <key>nodeB_id</key>
+    <type>int</type>
+  </param>
+  <param>
+	<name>Node</name>
+	<key>node</key>
+	<value>0</value>
+	<type>enum</type>
+	<option>
+		<name>NodeA</name>
+		<key>0</key>
+	</option>
+	<option>
+		<name>NodeB</name>
+		<key>1</key>
+	</option>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

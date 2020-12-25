@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<block>
+  <name>Flow Filling</name>
+  <key>CogNC_flow_filling</key>
+  <category>CogNC</category>
+  <import>import CogNC</import>
+  <make>CogNC.flow_filling($buffer_sz)</make>
+  
+  <param>
+    <name>Buffer Size</name>
+    <key>buffer_sz</key>
+    <type>int</type>
+  </param>
+
+  <sink>
+    <name>unfill_in</name>
+    <type>complex</type>
+  </sink>
+
+  <source>
+    <name>filled_out</name>
+    <type>complex</type>
+  </source>
+</block>

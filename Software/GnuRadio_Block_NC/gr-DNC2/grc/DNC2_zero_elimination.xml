@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<block>
+  <name>Zero Elimination</name>
+  <key>DNC2_zero_elimination</key>
+  <category>DNC2</category>
+  <import>import DNC2</import>
+  <make>DNC2.zero_elimination($node_id, $data_len)</make>
+
+  <param>
+    <name>Node ID</name>
+    <key>node_id</key>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>Data Size</name>
+    <key>data_len</key>
+    <type>int</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+
+  <source>
+    <name>data</name>
+    <type>byte</type>
+  </source>
+	
+  <!--<source>
+    <name>ctrl</name>
+    <type>byte</type>
+  </source>-->
+</block>

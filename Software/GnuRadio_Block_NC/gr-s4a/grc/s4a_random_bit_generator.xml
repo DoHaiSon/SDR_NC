@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<block>
+	<name>Random Bit Generator</name>
+	<key>s4a_random_bit_generator</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>random_bit_generator($sequence_size,$seed,$repeat)
+	</make>
+	<callback></callback>
+	<param>
+		<name>Sequence Size</name>
+		<key>sequence_size</key>
+		<value>128</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Seed</name>
+		<key>seed</key>
+		<value>0</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Repeat</name>
+		<key>repeat</key>
+		<value>True</value>
+		<type>enum</type>
+		<option>
+			<name>Yes</name>
+			<key>True</key>
+		</option>
+		<option>
+			<name>No</name>
+			<key>False</key>
+		</option>
+	</param>
+	<source>
+		<name>out</name>
+		<type>byte</type>
+	</source>
+</block>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<block>
+  <name>Hamming Encoder</name>
+  <key>DNC2_hamming_encoder</key>
+  <category>DNC2</category>
+  <import>import DNC2</import>
+  <import>from math import *</import>
+  <make>DNC2.hamming_encoder($m, $image_size, $packet_size)</make>
+  <param>
+	<name>M (H=Mx(2^M-1)</name>
+	<key>m</key>
+	<value>3</value>
+	<type>int</type>
+  </param>
+  <param>
+	<name>Image Size</name>
+	<key>image_size</key>
+	<type>int</type>
+  </param>
+  <param>
+	<name>Packet Size</name>
+	<key>packet_size</key>
+	<type>int</type>
+  </param>
+
+  <sink>
+	<name>in</name>
+	<type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

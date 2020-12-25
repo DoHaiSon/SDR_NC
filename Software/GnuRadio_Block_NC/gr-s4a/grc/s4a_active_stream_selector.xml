@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<block>
+	<name>Active Stream Selector</name>
+	<key>s4a_active_stream_selector</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>active_stream_selector($first_stream_length,$second_stream_length)
+	</make>
+	<callback></callback>
+	<param>
+		<name>First stream length</name>
+		<key>first_stream_length</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Second stream length</name>
+		<key>second_stream_length</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>in1</name>
+		<type>complex</type>
+	</sink>
+	<sink>
+		<name>in2</name>
+		<type>complex</type>
+	</sink>
+	<source>
+		<name>out</name>
+    <type>complex</type>
+	</source>
+</block>

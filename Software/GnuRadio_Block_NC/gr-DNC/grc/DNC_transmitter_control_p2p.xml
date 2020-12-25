@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<block>
+  <name>Transmitter Control P2P</name>
+  <key>DNC_transmitter_control_p2p</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.transmitter_control_p2p($packet_size, $guard_interval, $transmitter_id, $receiver_id)</make>
+  <param>
+    <name>Packet Size (bytes)</name>
+    <key>packet_size</key>
+    <value>120</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Guard Interval (bytes)</name>
+    <key>guard_interval</key>
+    <value>6</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Transmitter ID</name>
+    <key>transmitter_id</key>
+    <value>120</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Receiver ID</name>
+    <key>receiver_id</key>
+    <value>121</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in0</name>
+    <type>byte</type>
+  </sink>
+  <sink>
+    <name>in1</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

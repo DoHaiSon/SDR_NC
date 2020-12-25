@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<block>
+	<name>Bit to Byte</name>
+	<key>s4a_bit_to_byte</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>bit_to_byte()
+	</make>
+	<callback></callback>
+	<sink>
+		<name>in</name>
+		<type>byte</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>byte</type>
+	</source>
+</block>

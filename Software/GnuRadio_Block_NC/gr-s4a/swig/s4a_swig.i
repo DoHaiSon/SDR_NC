@@ -1,0 +1,121 @@
+/* -*- c++ -*- */
+
+#define S4A_API
+
+%include "gnuradio.i"			// the common stuff
+
+//load generated python docstrings
+%include "s4a_swig_doc.i"
+
+%{
+#include "s4a/active_stream_selector.h"
+#include "s4a/bit_to_byte.h"
+#include "s4a/bpsk_demapper.h"
+#include "s4a/byte_to_bit.h"
+#include "s4a/channel_reciprocity_tester.h"
+#include "s4a/coherence_time_counter_generator.h"
+#include "s4a/coherence_time_estimator.h"
+#include "s4a/console_sink_bb.h"
+#include "s4a/console_sink_cc.h"
+#include "s4a/csi_converter.h"
+#include "s4a/cyclic_prefix_insertion.h"
+#include "s4a/cyclic_prefix_removal.h"
+#include "s4a/frame_generation.h"
+#include "s4a/ofdm_demodulator.h"
+#include "s4a/ofdm_equalizer.h"
+#include "s4a/ofdm_metrics_controller.h"
+#include "s4a/ofdm_modulator.h"
+#include "s4a/ofdm_power_scaling.h"
+#include "s4a/parallel_to_serial.h"
+#include "s4a/primary_user_rx_controller.h"
+#include "s4a/qam4_mapper.h"
+#include "s4a/random_bit_generator.h"
+#include "s4a/secondary_user_tx_controller.h"
+#include "s4a/serial_to_parallel.h"
+#include "s4a/stream_selector.h"
+#include "s4a/vfdm_demodulator.h"
+#include "s4a/vfdm_equalizer.h"
+#include "s4a/vfdm_metrics_controller.h"
+#include "s4a/vfdm_modulator.h"
+#include "s4a/vfdm_power_scaling.h"
+#include "s4a/vfdm_precoder.h"
+#include "s4a/zero_padding.h"
+#include "s4a/qam4_demapper.h"
+#include "s4a/vfdm_sync.h"
+#include "s4a/bpsk_mapper.h"
+#include "s4a/ofdm_sync.h"
+%}
+
+%include "s4a/active_stream_selector.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, active_stream_selector);
+%include "s4a/bit_to_byte.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, bit_to_byte);
+%include "s4a/bpsk_demapper.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, bpsk_demapper);
+%include "s4a/byte_to_bit.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, byte_to_bit);
+%include "s4a/channel_reciprocity_tester.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, channel_reciprocity_tester);
+%include "s4a/coherence_time_counter_generator.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, coherence_time_counter_generator);
+%include "s4a/coherence_time_estimator.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, coherence_time_estimator);
+%include "s4a/console_sink_bb.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, console_sink_bb);
+%include "s4a/console_sink_cc.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, console_sink_cc);
+%include "s4a/csi_converter.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, csi_converter);
+%include "s4a/cyclic_prefix_insertion.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, cyclic_prefix_insertion);
+%include "s4a/cyclic_prefix_removal.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, cyclic_prefix_removal);
+%include "s4a/frame_generation.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, frame_generation);
+%include "s4a/ofdm_demodulator.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, ofdm_demodulator);
+%include "s4a/ofdm_equalizer.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, ofdm_equalizer);
+%include "s4a/ofdm_metrics_controller.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, ofdm_metrics_controller);
+%include "s4a/ofdm_modulator.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, ofdm_modulator);
+%include "s4a/ofdm_power_scaling.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, ofdm_power_scaling);
+%include "s4a/parallel_to_serial.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, parallel_to_serial);
+%include "s4a/primary_user_rx_controller.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, primary_user_rx_controller);
+%include "s4a/qam4_mapper.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, qam4_mapper);
+%include "s4a/random_bit_generator.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, random_bit_generator);
+%include "s4a/secondary_user_tx_controller.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, secondary_user_tx_controller);
+%include "s4a/serial_to_parallel.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, serial_to_parallel);
+%include "s4a/stream_selector.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, stream_selector);
+%include "s4a/vfdm_demodulator.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, vfdm_demodulator);
+%include "s4a/vfdm_equalizer.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, vfdm_equalizer);
+%include "s4a/vfdm_metrics_controller.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, vfdm_metrics_controller);
+%include "s4a/vfdm_modulator.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, vfdm_modulator);
+%include "s4a/vfdm_power_scaling.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, vfdm_power_scaling);
+%include "s4a/vfdm_precoder.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, vfdm_precoder);
+%include "s4a/zero_padding.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, zero_padding);
+
+%include "s4a/qam4_demapper.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, qam4_demapper);
+%include "s4a/vfdm_sync.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, vfdm_sync);
+%include "s4a/bpsk_mapper.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, bpsk_mapper);
+%include "s4a/ofdm_sync.h"
+GR_SWIG_BLOCK_MAGIC2(s4a, ofdm_sync);

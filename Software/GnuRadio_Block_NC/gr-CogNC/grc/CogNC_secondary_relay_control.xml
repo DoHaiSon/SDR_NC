@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<block>
+  <name>Secondary Relay Control</name>
+  <key>CogNC_secondary_relay_control</key>
+  <category>CogNC</category>
+  <import>import CogNC</import>
+  <make>CogNC.secondary_relay_control($packet_size, $buffer_size, $guard_interval_downlink, $guard_interval, $end_nodeA_id, $end_nodeB_id, $relay_id)</make>
+  <param>
+    <name>Packet Size (bytes)</name>
+    <key>packet_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Buffer Size (packets)</name>
+    <key>buffer_size</key>
+    <type>int</type>
+  </param>
+  <param>
+	<name>Guard Interval in Downlink?</name>
+	<key>guard_interval_downlink</key>
+	<value>0</value>
+	<type>enum</type>
+	<option>
+		<name>Yes</name>
+		<key>1</key>
+	</option>
+	<option>
+		<name>No</name>
+		<key>0</key>
+	</option>
+  </param>
+  <param>
+    <name>Guard Interval (bytes)</name>
+    <key>guard_interval</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>End NodeA ID</name>
+    <key>end_nodeA_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>End NodeB ID</name>
+    <key>end_nodeB_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Relay Node ID</name>
+    <key>relay_id</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in0</name>
+    <type>byte</type>
+  </sink>
+  <sink>
+    <name>in1</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

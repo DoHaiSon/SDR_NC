@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<block>
+  <name>Hybrid Parallel-Stream Controller</name>
+  <key>CogNC_hybrid_stream_controller</key>
+  <category>CogNC</category>
+  <import>import CogNC</import>
+  <make>CogNC.hybrid_stream_controller($cr_mode, $ofdm_stream_length, $vfdm_stream_length)</make>
+  <param>
+	<name>Cognitive TX Mode</name>
+	<key>cr_mode</key>
+	<value>1</value>
+	<type>enum</type>
+	<option>
+		<name>Opportunistic</name>
+		<key>1</key>
+	</option>
+	<option>
+		<name>Concurrent</name>
+		<key>0</key>
+	</option>
+  </param>
+  <param>
+    <name>OFDM Frame Length</name>
+    <key>ofdm_stream_length</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>VFDM Frame Length</name>
+    <key>vfdm_stream_length</key>
+    <type>int</type>
+  </param>
+
+  <sink>
+    <name>ofdm_stream</name>
+    <type>complex</type>
+    <vlen>$ofdm_stream_length</vlen>
+  </sink>
+
+  <sink>
+    <name>vfdm_stream</name>
+    <type>complex</type>
+    <vlen>$vfdm_stream_length</vlen>
+  </sink>
+  
+  <source>
+    <name>hybrid_stream</name>
+    <type>complex</type>
+    <vlen>1</vlen>
+  </source>
+</block>

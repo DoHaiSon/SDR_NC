@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<block>
+	<name>BPSK Mapper</name>
+	<key>s4a_bpsk_mapper</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>bpsk_mapper()
+	</make>
+	<callback></callback>
+	<sink>
+		<name>bit_in</name>
+		<type>byte</type>
+	</sink>
+	<source>
+		<name>sym_out</name>
+		<type>complex</type>
+	</source>
+</block>

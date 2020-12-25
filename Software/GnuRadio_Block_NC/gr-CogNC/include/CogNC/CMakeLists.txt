@@ -1,0 +1,39 @@
+# Copyright 2011,2012 Free Software Foundation, Inc.
+#
+# This file is part of GNU Radio
+#
+# GNU Radio is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3, or (at your option)
+# any later version.
+#
+# GNU Radio is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with GNU Radio; see the file COPYING.  If not, write to
+# the Free Software Foundation, Inc., 51 Franklin Street,
+# Boston, MA 02110-1301, USA.
+
+########################################################################
+# Install public header files
+########################################################################
+install(FILES
+    api.h
+    delay_packet.h
+    flow_filling.h
+    primary_rx_control.h
+    primary_tx_control.h
+    primary_source_control.h
+    primary_destination_control.h
+    secondary_endnode_control.h
+    secondary_relay_control.h
+    hybrid_stream_control.h
+    vfdm_metrics_control.h
+    hybrid_stream_controller.h
+    vfdm_header_insertion.h
+    vfdm_header_removal.h
+    test_block.h DESTINATION include/CogNC
+)

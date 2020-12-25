@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<block>
+  <name>Delay and Shift Input</name>
+  <key>CogNC_delay_packet</key>
+  <category>CogNC</category>
+  <import>import CogNC</import>
+  <make>CogNC.delay_packet($packet_length, $delay_coeff, $phase_shift)</make>
+ 
+  <param>
+    <name>Packet Length</name>
+    <key>packet_length</key>
+    <value>144</value>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>Delay Coefficient</name>
+    <key>delay_coeff</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>Phase Shift</name>
+    <key>phase_shift</key>
+    <value>0</value>
+    <type>float</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

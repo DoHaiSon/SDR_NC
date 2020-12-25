@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<block>
+  <name>MDC Decoding</name>
+  <key>DNC_MDC_decoding</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.MDC_decoding($image_width, $image_height, $no_descriptions)</make>
+  <param>
+    <name>Image Width</name>
+    <key>image_width</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Image Height</name>
+    <key>image_height</key>
+    <type>int</type>
+  </param>
+  <param>
+	<name>Number of Descriptions</name>
+	<key>no_descriptions</key>
+	<value>1</value>
+	<type>enum</type>
+	<option>
+		<name>1</name>
+		<key>1</key>
+	</option>
+	<option>
+		<name>2</name>
+		<key>2</key>
+	</option>	
+  </param>
+  <sink>
+    <name>in0</name>
+    <type>byte</type>
+  </sink>
+  <sink>
+    <name>in1</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

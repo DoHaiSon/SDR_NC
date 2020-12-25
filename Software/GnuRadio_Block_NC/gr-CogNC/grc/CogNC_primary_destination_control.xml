@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<block>
+  <name>TDD Primary Destination Control</name>
+  <key>CogNC_primary_destination_control</key>
+  <category>CogNC</category>
+  <import>import CogNC</import>
+  <make>CogNC.primary_destination_control($packet_size, $source_id, $destination_id, $time_out)</make>
+   <param>
+    <name>Packet Size (bytes)</name>
+    <key>packet_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Source ID</name>
+    <key>source_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Destination ID</name>
+    <key>destination_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Timeout (ms)</name>
+    <key>time_out</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>tx_ack</name>
+    <type>byte</type>
+  </source>
+  <source>
+    <name>data</name>
+    <type>byte</type>
+  </source>
+</block>

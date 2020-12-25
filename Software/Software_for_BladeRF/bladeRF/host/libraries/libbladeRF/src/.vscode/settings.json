@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "libbladerf.h": "c",
+        "stdio.h": "c"
+    },
+    "python.pythonPath": "/usr/bin/python"
+}

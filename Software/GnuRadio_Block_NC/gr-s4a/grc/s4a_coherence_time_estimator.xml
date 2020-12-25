@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<block>
+	<name>Coherence Time Estimator</name>
+	<key>s4a_coherence_time_estimator</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>coherence_time_estimator($pearson_correlation, $output_mode,
+          $data_sz, $channel_sz, $data_block_rep, $check_sz,
+          $r_differentiation, $snr_threshold, $frame_sz,
+          $signal_bw, $packet_header_sz, $packet_header_val,
+          $packet_counter_sz, $packet_rep, $packet_zero_padding)
+	</make>
+	<callback></callback>
+	<param>
+		<name>Channel Size</name>
+		<key>channel_sz</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Symbol Input Size</name>
+		<key>data_sz</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Output Mode</name>
+		<key>output_mode</key>
+		<value>1</value>
+		<type>enum</type>
+		<option>
+			<name>On Detection</name>
+			<key>1</key>
+		</option>
+		<option>
+			<name>All</name>
+			<key>2</key>
+		</option>
+	</param>
+	<param>
+		<name>Pearson correlation</name>
+		<key>pearson_correlation</key>
+		<value>1</value>
+		<type>enum</type>
+		<option>
+			<name>1D (Abs)</name>
+			<key>1</key>
+		</option>
+		<option>
+			<name>2D (Complex)</name>
+			<key>2</key>
+		</option>
+	</param>
+	<param>
+		<name>Check Size</name>
+		<key>check_sz</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>R Differentiation</name>
+		<key>r_differentiation</key>
+		<value>0.1</value>
+		<type>real</type>
+	</param>
+	<param>
+		<name>Data Block Rep</name>
+		<key>data_block_rep</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>SNR Threshold</name>
+		<key>snr_threshold</key>
+		<value>7</value>
+		<type>real</type>
+	</param>
+	<param>
+		<name>Frame Size</name>
+		<key>frame_sz</key>
+		<value>(fft_length + cp_length)*(1 + 1 + 1*1 + 1)</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Signal Bandwidth</name>
+		<key>signal_bw</key>
+		<value>1000000</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Packet Header Size</name>
+		<key>packet_header_sz</key>
+		<value>16</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Packet Header Value</name>
+		<key>packet_header_val</key>
+		<value>0x0</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Packet Counter Size</name>
+		<key>packet_counter_sz</key>
+		<value>32</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Packet Repetition</name>
+		<key>packet_rep</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Packet Zero Padding</name>
+		<key>packet_zero_padding</key>
+		<value>0</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>syms</name>
+		<type>complex</type>
+		<vlen>$data_sz</vlen>
+	</sink>
+	<sink>
+		<name>h</name>
+		<type>complex</type>
+		<vlen>$channel_sz</vlen>
+	</sink>
+	<sink>
+		<name>SNR</name>
+		<type>float</type>
+	</sink>
+	<source>
+		<name>counter</name>
+		<type>int</type>
+	</source>
+	<source>
+		<name>h</name>
+		<type>complex</type>
+		<vlen>$channel_sz</vlen>
+	</source>
+	<source>
+		<name>r</name>
+		<type>float</type>
+	</source>
+</block>

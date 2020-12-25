@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<block>
+  <name>Receiver Control P2P</name>
+  <key>DNC_receiver_control_p2p</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.receiver_control_p2p($packet_size, $transmitter_id, $receiver_id)</make>
+  <param>
+    <name>Packet Size</name>
+    <key>packet_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Transmitter ID</name>
+    <key>transmitter_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Receiver ID</name>
+    <key>receiver_id</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out0</name>
+    <type>byte</type>
+  </source>
+  <source>
+    <name>out1</name>
+    <type>byte</type>
+  </source>
+</block>

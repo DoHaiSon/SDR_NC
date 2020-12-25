@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<block>
+  <name>Relay Controller</name>
+  <key>DNC_relay_controller</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.relay_controller($packet_size, $guard_interval, $end_nodeA_id, $end_nodeB_id, $relay_node_id)</make>
+  <param>
+    <name>Packet Size (bytes)</name>
+    <key>packet_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Guard Interval (bytes)</name>
+    <key>guard_interval</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>End NodeA ID</name>
+    <key>end_nodeA_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>End NodeB ID</name>
+    <key>end_nodeB_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Relay Node ID</name>
+    <key>relay_node_id</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in0</name>
+    <type>byte</type>
+  </sink>
+  <sink>
+    <name>in1</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

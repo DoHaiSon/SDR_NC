@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<block>
+  <name>Test TDD Pri Source Control</name>
+  <key>CogNC_test_block</key>
+  <category>CogNC</category>
+  <import>import CogNC</import>
+  <make>CogNC.test_block($packet_size, $source_id, $destination_id)</make>
+  <param>
+    <name>Packet Size</name>
+    <key>packet_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Source ID</name>
+    <key>source_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Destination ID</name>
+    <key>destination_id</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in0</name>
+    <type>byte</type>
+  </sink>
+  <sink>
+    <name>in1</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out0</name>
+    <type>byte</type>
+  </source>
+</block>

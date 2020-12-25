@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<block>
+	<name>Stream Selector</name>
+	<key>s4a_stream_selector</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>stream_selector($magnitude_min,
+                     $magnitude_max, 
+                     $input_stream_length,
+                     $output_stream_length)
+	</make>
+	<callback></callback>
+	<param>
+		<name>Magnitude Min</name>
+		<key>magnitude_min</key>
+		<value>0</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Magnitude Max</name>
+		<key>magnitude_max</key>
+		<value>32768</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Input Stream Length</name>
+		<key>input_stream_length</key>
+		<value>128</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Output Stream Length</name>
+		<key>output_stream_length</key>
+		<value>128</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>in</name>
+		<type>complex</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>complex</type>
+	</source>
+</block>

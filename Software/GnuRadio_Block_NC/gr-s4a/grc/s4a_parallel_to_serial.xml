@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<block>
+	<name>Parallel To Serial</name>
+	<key>s4a_parallel_to_serial</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>parallel_to_serial($parallel_size)
+	</make>
+	<callback></callback>
+	<param>
+		<name>Parallel Size</name>
+		<key>parallel_size</key>
+		<value>128</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>in</name>
+		<type>complex</type>
+		<vlen>$parallel_size</vlen>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>complex</type>
+	</source>
+</block>

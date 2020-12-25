@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<block>
+  <name>VFDM Header Removal</name>
+  <key>CogNC_vfdm_header_removal</key>
+  <category>CogNC</category>
+  <import>import CogNC</import>
+  <make>CogNC.vfdm_header_removal($data_burst_size, $header, $header_size)</make>
+  
+  <param>
+    <name>Data Burst Size (bytes)</name>
+    <key>data_burst_size</key>
+    <value>60</value>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>Header Value</name>
+    <key>header</key>
+    <value>255</value>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>Header Size (bytes)</name>
+    <key>header_size</key>
+    <value>3</value>
+    <type>int</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

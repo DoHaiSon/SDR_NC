@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<block>
+	<name>QAM4 DeMapper</name>
+	<key>s4a_qam4_demapper</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>qam4_demapper()
+	</make>
+	<callback></callback>
+	<sink>
+		<name>sym_in</name>
+		<type>complex</type>
+	</sink>
+	<source>
+		<name>byte_out</name>
+		<type>byte</type>
+	</source>
+</block>

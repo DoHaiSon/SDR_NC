@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<block>
+	<name>VFDM Sync</name>
+	<key>s4a_vfdm_sync</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>vfdm_sync($fft_length, $occupied_tones, $cp_length, 
+                  $precoder_length, $preamble_block_rep, 
+                  $pilot_block_t_sz, $pilot_block_rep, 
+                  $data_block_sz, $data_block_rep,
+                  $silence_block_rep, 
+                  $cfo_next_preamble_distance, 
+		  $time_out,
+                  $cfo_sync_method)
+	</make>
+	<callback></callback>
+	<param>
+		<name>FFT Length</name>
+		<key>fft_length</key>
+		<value>128</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Occupied Tones</name>
+		<key>occupied_tones</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Cyclic Prefix Length</name>
+		<key>cp_length</key>
+		<value>16</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Precoder Length</name>
+		<key>precoder_length</key>
+		<value>16</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Preamble Block Rep</name>
+		<key>preamble_block_rep</key>
+		<value>preamble_block_rep</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Pilot Block T Size</name>
+		<key>pilot_block_t_sz</key>
+		<value>pilot_block_rep</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Pilot Block Rep</name>
+		<key>pilot_block_rep</key>
+		<value>pilot_block_rep</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Data Block Size</name>
+		<key>data_block_sz</key>
+		<value>data_block_sz</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Data Block Rep</name>
+		<key>data_block_rep</key>
+		<value>data_block_rep</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Silence Block Rep</name>
+		<key>silence_block_rep</key>
+		<value>silence_block_rep</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>CFO Next Preamble Distance</name>
+		<key>cfo_next_preamble_distance</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Time out (ms)</name>
+		<key>time_out</key>
+		<value>1000</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>CFO Sync Method</name>
+		<key>cfo_sync_method</key>
+		<value>0</value>
+		<type>enum</type>
+		<option>
+			<name>Schmidl-Cox</name>
+			<key>0</key>
+		</option>
+		<option>
+			<name>RepeatedPreamble</name>
+			<key>1</key>
+		</option>
+	</param>
+	<sink>
+		<name>in</name>
+		<type>complex</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>complex</type>
+	</source>
+</block>

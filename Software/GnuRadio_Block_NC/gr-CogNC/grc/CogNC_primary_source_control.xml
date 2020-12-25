@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<block>
+  <name>TDD Primary Source Control</name>
+  <key>CogNC_primary_source_control</key>
+  <category>CogNC</category>
+  <import>import CogNC</import>
+  <make>CogNC.primary_source_control($packet_size, $source_id, $destination_id, $ack_burst_size, $channel_size)</make>
+  <param>
+    <name>Packet Size</name>
+    <key>packet_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Source ID</name>
+    <key>source_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Destination ID</name>
+    <key>destination_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>ACK Burst Size (bytes)</name>
+    <key>ack_burst_size</key>
+    <value>6</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Channel Size</name>
+    <key>channel_size</key>
+    <value>48</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>rx_ack</name>
+    <type>byte</type>
+    <vlen>$ack_burst_size</vlen>
+  </sink>
+  <sink>
+    <name>rx_h</name>
+    <type>complex</type>
+    <vlen>$channel_size</vlen>
+  </sink>
+  <sink>
+    <name>data</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>tx_data</name>
+    <type>byte</type>
+    <vlen>$packet_size + 6</vlen>
+  </source>
+  <source>
+    <name>tx_h</name>
+    <type>complex</type>
+    <vlen>$channel_size</vlen>
+  </source>
+</block>

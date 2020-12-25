@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<block>
+  <name>Flow Controller CC</name>
+  <key>DNC_flow_controller_cc</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.flow_controller_cc($key, $control_mode)</make>
+  <param>
+    <name>Key</name>
+    <key>key</key>
+    <type>int</type>
+  </param>
+  <param>
+	<name>Control Mode</name>
+	<key>control_mode</key>
+	<value>1</value>
+	<type>enum</type>
+	<option>
+		<name>Equivalent</name>
+		<key>1</key>
+	</option>
+	<option>
+		<name>Inequivalent</name>
+		<key>0</key>
+	</option>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>control_signal</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<block>
+  <name>FDD Primary Destination Control</name>
+  <key>CogNC_primary_rx_control</key>
+  <category>CogNC</category>
+  <import>import CogNC</import>
+  <make>CogNC.primary_rx_control($packet_sz, $source_id, $destination_id)</make>
+ <param>
+    <name>Packet Size</name>
+    <key>packet_sz</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Source ID</name>
+    <key>source_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Destination ID</name>
+    <key>destination_id</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>ack</name>
+    <type>byte</type>
+  </source>
+  <source>
+    <name>data</name>
+    <type>byte</type>
+  </source>
+</block>

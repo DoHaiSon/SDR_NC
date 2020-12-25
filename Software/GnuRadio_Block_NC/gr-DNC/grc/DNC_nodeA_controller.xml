@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<block>
+  <name>NodeA Controller</name>
+  <key>DNC_nodeA_controller</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.nodeA_controller($buffer_size, $packet_size, $guard_interval, $nodeA_id, $nodeB_id, $nodeC_id, $nodeR_id)</make>
+  <param>
+    	<name>Buffer Size (packets)</name>
+    	<key>buffer_size</key>
+   	 <type>int</type>
+  </param>
+  <param>
+    	<name>Packet Size (bytes)</name>
+    	<key>packet_size</key>
+    	<type>int</type>
+  </param>
+  <param>
+    	<name>Guard Interval (bytes)</name>
+    	<key>guard_interval</key>
+    	<type>int</type>
+  </param>
+  <param>
+    	<name>NodeA ID</name>
+    	<key>nodeA_id</key>
+    	<type>int</type>
+  </param>
+  <param>
+    	<name>NodeB ID</name>
+    	<key>nodeB_id</key>
+    	<type>int</type>
+  </param>
+  <param>
+   	 <name>NodeC ID</name>
+    	<key>nodeC_id</key>
+    	<type>int</type>
+  </param>
+  <param>
+    	<name>NodeR ID</name>
+    	<key>nodeR_id</key>
+   	 <type>int</type>
+  </param>
+  <sink>
+    <name>rx</name>
+    <type>byte</type>
+  </sink>
+  <sink>
+    <name>original_data</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>tx</name>
+    <type>byte</type>
+  </source>
+</block>

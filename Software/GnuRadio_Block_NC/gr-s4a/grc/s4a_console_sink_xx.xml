@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<block>
+	<name>Console Sink</name>
+	<key>s4a_console_sink_xx</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>console_sink_$(type.fcn)($sequence_name,
+                                 $sequence_length,$print_rate)
+	</make>
+	<callback></callback>
+	<param>
+		<name>IO Type</name>
+		<key>type</key>
+		<type>enum</type>
+		<option>
+			<name>Complex</name>
+			<key>complex</key>
+			<opt>fcn:cc</opt>
+		</option>
+		<option>
+			<name>Byte</name>
+			<key>byte</key>
+			<opt>fcn:bb</opt>
+		</option>
+	</param>
+	<param>
+		<name>Sequence Name</name>
+		<key>sequence_name</key>
+		<value>seq</value>
+		<type>string</type>
+	</param>
+	<param>
+		<name>Sequence Length</name>
+		<key>sequence_length</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Print Rate (1=max)</name>
+		<key>print_rate</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>in</name>
+    <type>$type</type>
+	</sink>
+</block>

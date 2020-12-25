@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<block>
+  <name>Relay2 Controller</name>
+  <key>DNC_relay2_controller</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.relay2_controller($buffer_size, $packet_size, $guard_interval, $source1_id, $source2_id, $relay1_id, $relay2_id, $destination1_id, $destination2_id, $network_coding)</make>
+  <param>
+    <name>Buffer Size</name>
+    <key>buffer_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Packet Size</name>
+    <key>packet_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Guard Interval</name>
+    <key>guard_interval</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Source1 ID</name>
+    <key>source1_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Source2 ID</name>
+    <key>source2_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Relay1 ID</name>
+    <key>relay1_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Relay2 ID</name>
+    <key>relay2_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Destination1 ID</name>
+    <key>destination1_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Destination2 ID</name>
+    <key>destination2_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    	<name>Network Coding Method</name>
+	<key>network_coding</key>
+	<value>0</value>
+	<type>enum</type>
+	<option>
+		<name>Yes</name>
+		<key>1</key>
+	</option>
+	<option>
+		<name>No</name>
+		<key>0</key>
+	</option>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

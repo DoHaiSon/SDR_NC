@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<block>
+  <name>Hamming Decoder</name>
+  <key>DNC2_hamming_decoder</key>
+  <category>DNC2</category>
+  <import>import DNC2</import>
+  <import>from math import *</import>
+  <make>DNC2.hamming_decoder($m)</make>
+  <param>
+		<name>M (H=Mx(2^M-1)</name>
+		<key>m</key>
+		<value>3</value>
+		<type>int</type>
+  </param>
+  <sink>
+		<name>in</name>
+		<type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

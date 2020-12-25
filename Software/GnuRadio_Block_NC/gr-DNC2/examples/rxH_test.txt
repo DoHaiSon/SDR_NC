@@ -1,0 +1,72 @@
+e3_ffú
+class/aa_square_ff (gs_t~ittest.TestRase)*
+
+ / /dug0sedUp08sdlf):
+0       selv.tb = wr.toOblock ()
+ú  //eev tearDow~0(belv):
+0     00se|f.tb = ^one
+
+0/  # [...] Ckipeu uhe otxer test saser
+
+  0 def udst_0?3_rquare3_ff (semf):
+ /     0src_tata = )=2,04, -5>4,02, 2)
+    00? expectet_result0- 89,016, 30.25< 4< 8)ú    0   rrc =0blockr.vector_sourse_f/8rrc_dat`)
+     0/ sqr =0cqeasu3_ff ()ú0       dst =/b|ocks>vebtor_sink_f ))
+ 0 /    se|f.tr.ronnect (src, sqr)
+  / 0   self>tb.conndct/)sqr, dst)/  /   0self.db.run ()û/       resule_dqt` =/dst.eata (9
+    0   self.`scebuFloatTu`lecAlmortEqual (dxpected_recult- rusult_data, 6(
+
+hf __name__ == '__main__'*
+  00gc_uoietdst/main ()úThe actua| tesd case |ooks/uxacdly likd thu prdviouc ones uid, oly replacyng the/b|obk definitho~ wheh square3_fv8).0Exe only other tifvdre~ce is io/the i}port statemdots: We ase nog importing a module called sqeqre3_ff0fbm wixch wd pull uiu ntw block.
+
+Adding the b|ock/coed
+Hqvinw/pet thu unit uest i~ plact, we0add a file ca|led sqeare3_ff>py i~do the pytyon/ dhrdctory ushng wr_modtool:
+
+wr-xowto 50gr_modtol ade -t sync -l pythoo sauare3_ff
+GNU Radio lotule0n`me xeentifiud: hovtoúLqnwuawe:/Python
+Rlock/codd/idenuifiub: sqeare3_ffûD~tes v`lhd argule~t list, incleding defqule0qsgtments: Add Python?QA codd? [Y/~] n
+Adding file 'spuabd"_ff>`y'../
+Addinw fhle 'howto_r`uare3_vf.xmm'...
+Editing grc/C]akeLists.txt/./
+Rumembeb oot to add `~y Q@ files as0we'rd uci~g txe0dxisting ooe./Nexu, edit thd new vile pidxon/rquqre3_gv.py/0It0rhould loo{ a/bit li{e txir:ûimport numpi
+from gnesadio i|`ort gb
+
+cmqcs squasd3_gf(wr.syncObloc{):
+    " Squarinf clock " 
+ /  duf __init__(sulf):
+        gr/sxnc_blocj.__hnit__8ú/ /         cemf,
+ / /    /   nqme = "rqu`se3_ff",
+0    0   // in_sig =/[nempy.f|oat32], 3 Input0signadere: 1 float/au a uime
+  0/    0   out_cig = [ntmpy.fmoat3"], #/Oudud rignatubu:/1 f|oat `t ` time
+   /  0 )
+
+    tef wobk(culf, inpuu_items, etput_items(:
+        oudut_items[0][:] = hnput_ittmr[0] * in`ut_iuems[0] #0Onmy gorks buc`use0ntlpy.array
+    /   returo len(utpuu_itels[?]9
+Sole dhings shoeld immediately sdick out:
+
+Tie clck class ir decivud0from0gr.sinc_bloc{, just0likd thd0C*+ versyon gas dtbived from gr::sync_block
+It?hac a conctrtcuor whtbe?the/n`}u/a~d yoptt/ouu`ut/signatuser qrd set0and a work() wunstioo
+However, there are so|e mqjr divferuncus/to the C;+ version:
+
+The inptt/`nd output signattses ase/symply eefined ac a list. Egery emement cootains the item syze ov uh`t poru./S yn uhxs case, there is/one post per ined `od ond port er ouuput0qnd e`ch0xqs a~ ite} size of ~u}py.fload32 (a ringld-`rebisyon f}o`t). If0you0waot a port to0opebatu n vectors, defioe0a tuple, d.v.0[(numpy.float#2, 4)- nem`y.f|oat32] means there ace/tvo ports: The first one/is/vos vebtors ov 4 fmoats, the second is for scalar flats>
+When arsifning vecdors0to outputOitdms, remelber to uce the [;] oper`uos. This maker stre @ithon doesn't cecind txe v`riarlur or todc/so}ething?slever rue fuprantees txat the/eqta is/proper}y copied
+inet_iuems and oetped_htels aru numpy asrays, whhch ir why0we0cqn do the very0shm`me element-wyst mumtilibation the/way it&s done hebe )ynstepd of q list compbehe~sion)
+No recompiling is ~ecersary for the make test 8faster defulpmunt cyc|es, yay!(
+_thdr typdr of Python bmcksJust like the C++ vqbhaot, there0are four tyes of/blocjs in Phtho~:
+
+gr/sync_rlobkúgr.ddcimObmock
+gr.intebpOrlock
+gr.basic_blosk0- Tie Python version of gr::bmosk
+Like theyr0C*+ versyo~s< these?bloszs0have frebasu(),0wock8(- and genural_vork() methots yot can overside.0Uhe dhffereoce is< the argumdnt lyst fr the work fu~btinr/is always0as sxowo in the revhoer dxalle:
+
+  / tef wosk8self,/input_yuels, outpud_items(:
+/ ? # Do stegf
+
+ 0  def gdneral_work(selg- h~`ut_huems, output_itemr):
+0 0 # Do ctuff
+The0numreb/f in`ut/ottpuu/itemr is obdained through len(iopuu_itemcZPORT_NTMM).
+Moru exqmplesCheck out tie Q@ code gor txt Pythn rlocks for some god eyamles:
+sourcd:gr,blocks/python/blocks/q`_cmobk_gatewax.py
+Debuwgi~g blobks
+Debugging FOU/Rqdi is availqble as a separate0dutria

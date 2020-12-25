@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<block>
+	<name>Secondary User Tx Controller</name>
+	<key>s4a_secondary_user_tx_controller</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+  <import>from math import *</import>
+	<make>secondary_user_tx_controller($channel_size,
+                $required_data_bytes_on_each_burst, $working_mode, 
+                $symbol_flow, $node_id, $remote_node_id, 
+                $response_timeout_ms, $wrong_packet_discard_limit, 
+                $tx_packet_repetition, $snr_limit, 
+                $snr_console_print_rate)
+	</make>
+	<callback></callback>
+	<param>
+		<name>Channel Size</name>
+		<key>channel_size</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Required Data Bytes on Each Burst</name>
+		<key>required_data_bytes_on_each_burst</key>
+		<value>6</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Working Mode</name>
+		<key>working_mode</key>
+		<value>0</value>
+		<type>enum</type>
+		<option>
+			<name>Master</name>
+			<key>0</key>
+		</option>
+		<option>
+			<name>Slave</name>
+			<key>1</key>
+		</option>
+		<option>
+			<name>Spy</name>
+			<key>2</key>
+		</option>
+	</param>
+	<param>
+		<name>Symbol Flow</name>
+		<key>symbol_flow</key>
+		<value>0</value>
+		<type>enum</type>
+		<option>
+			<name>Continious</name>
+			<key>0</key>
+		</option>
+		<option>
+			<name>Discrete</name>
+			<key>1</key>
+		</option>
+	</param>
+	<param>
+		<name>Node ID</name>
+		<key>node_id</key>
+		<value>187</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Remote Node ID</name>
+		<key>remote_node_id</key>
+		<value>170</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Reception Timeout (ms)</name>
+		<key>response_timeout_ms</key>
+		<value>10</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Wrong Packet Discard Limit (for Master)</name>
+		<key>wrong_packet_discard_limit</key>
+		<value>4</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>TX Packet Repetition</name>
+		<key>tx_packet_repetition</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>SNR Limit</name>
+		<key>snr_limit</key>
+		<value>7.0</value>
+		<type>real</type>
+	</param>
+	<param>
+		<name>SNR Console Print Rate (1 = max)</name>
+		<key>snr_console_print_rate</key>
+		<value>10</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>rx_bytes</name>
+		<type>byte</type>
+		<vlen>$required_data_bytes_on_each_burst</vlen>
+	</sink>
+	<sink>
+		<name>rx_h</name>
+		<type>complex</type>
+		<vlen>$channel_size</vlen>
+	</sink>
+	<sink>
+		<name>rx_SNR</name>
+		<type>float</type>
+	</sink>
+	<source>
+		<name>bytes</name>
+		<type>byte</type>
+		<vlen>$required_data_bytes_on_each_burst</vlen>
+	</source>
+	<source>
+		<name>metrics</name>
+		<type>complex</type>
+    <vlen>(int(pow(2,ceil(log(5 + $channel_size,2)))))</vlen>
+	</source>
+</block>

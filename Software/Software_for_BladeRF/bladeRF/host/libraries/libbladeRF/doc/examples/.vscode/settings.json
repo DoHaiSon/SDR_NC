@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "example_common.h": "c",
+        "string.h": "c",
+        "ostream": "cpp",
+        "libbladerf.h": "c"
+    }
+}

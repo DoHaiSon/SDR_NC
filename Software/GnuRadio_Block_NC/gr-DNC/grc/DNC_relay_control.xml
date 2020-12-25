@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<block>
+  <name>Relay Control</name>
+  <key>DNC_relay_control</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.relay_control($data_size, $end_nodeA_id, $end_nodeB_id, $relay_node_id, $timeout)</make>
+  <param>
+    <name>Data Size</name>
+    <key>data_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>End NodeA ID</name>
+    <key>end_nodeA_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>End NodeB ID</name>
+    <key>end_nodeB_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Relay Node ID</name>
+    <key>relay_node_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Timeout (ms)</name>
+    <key>timeout</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in0</name>
+    <type>byte</type>
+  </sink>
+  <sink>
+    <name>in1</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

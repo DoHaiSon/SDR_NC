@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<block>
+	<name>CSI Converter</name>
+	<key>s4a_csi_converter</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>csi_converter($data_syms_length, $channel_size)
+	</make>
+	<callback></callback>
+	<param>
+		<name>Data symbols length</name>
+		<key>data_syms_length</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Channel Size</name>
+		<key>channel_size</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>data_in</name>
+		<type>complex</type>
+		<vlen>$data_syms_length</vlen>
+	</sink>
+	<sink>
+		<name>h_in</name>
+		<type>complex</type>
+		<vlen>$channel_size</vlen>
+	</sink>
+	<source>
+		<name>data_out</name>
+		<type>complex</type>
+		<vlen>$data_syms_length</vlen>
+	</source>
+	<source>
+		<name>h_out</name>
+		<type>complex</type>
+		<vlen>$channel_size</vlen>
+	</source>
+</block>

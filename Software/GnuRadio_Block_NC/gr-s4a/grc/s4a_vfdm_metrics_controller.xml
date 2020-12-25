@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<block>
+	<name>VFDM Metrics Controller</name>
+	<key>s4a_vfdm_metrics_controller</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>vfdm_metrics_controller($data_syms_length, $channel_size, 
+                                $normalize_h)
+	</make>
+	<callback></callback>
+	<param>
+		<name>Data symbols length</name>
+		<key>data_syms_length</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Channel Size</name>
+		<key>channel_size</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Normalize channel</name>
+		<key>normalize_h</key>
+		<value>1</value>
+		<type>enum</type>
+		<option>
+			<name>Yes</name>
+			<key>1</key>
+		</option>
+		<option>
+			<name>No</name>
+			<key>o</key>
+		</option>
+	</param>
+	<sink>
+		<name>data_syms</name>
+		<type>complex</type>
+		<vlen>$data_syms_length</vlen>
+	</sink>
+	<sink>
+		<name>metrics</name>
+		<type>complex</type>
+		<vlen>(int(pow(2,ceil(log(5 + $channel_size,2)))))</vlen>
+	</sink>
+	<source>
+		<name>ofdm_syms</name>
+		<type>complex</type>
+		<vlen>$data_syms_length</vlen>
+	</source>
+	<source>
+		<name>vfdm_syms</name>
+		<type>complex</type>
+		<vlen>$data_syms_length</vlen>
+	</source>
+	<source>
+		<name>h_t</name>
+		<type>complex</type>
+		<vlen>$channel_size</vlen>
+	</source>
+</block>

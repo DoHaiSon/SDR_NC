@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<block>
+	<name>Coherence Time Counter Generator</name>
+	<key>s4a_coherence_time_counter_generator</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>coherence_time_counter_generator($packet_header_sz,
+                    $packet_header_val, $packet_counter_sz,
+                    $packet_rep, $packet_zero_padding)
+	</make>
+	<callback></callback>
+	<param>
+		<name>Packet Header Size</name>
+		<key>packet_header_sz</key>
+		<value>16</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Packet Header Value</name>
+		<key>packet_header_val</key>
+		<value>0x0</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Packet Counter Size</name>
+		<key>packet_counter_sz</key>
+		<value>32</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Packet Repetition</name>
+		<key>packet_rep</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Packet Zero Padding</name>
+		<key>packet_zero_padding</key>
+		<value>0</value>
+		<type>int</type>
+	</param>
+	<source>
+		<name>bit_out</name>
+		<type>byte</type>
+	</source>
+</block>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<block>
+	<name>OFDM Metrics Controller</name>
+	<key>s4a_ofdm_metrics_controller</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>ofdm_metrics_controller($data_syms_length, $channel_size)
+	</make>
+	<callback></callback>
+	<param>
+		<name>Data symbols length</name>
+		<key>data_syms_length</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Channel size</name>
+		<key>channel_size</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>data_syms</name>
+		<type>complex</type>
+		<vlen>$data_syms_length</vlen>
+	</sink>
+	<sink>
+		<name>metrics</name>
+		<type>complex</type>
+		<vlen>(int(pow(2,ceil(log(5 + $channel_size,2)))))</vlen>
+	</sink>
+	<source>
+		<name>ofdm_syms</name>
+		<type>complex</type>
+		<vlen>$data_syms_length</vlen>
+	</source>
+</block>

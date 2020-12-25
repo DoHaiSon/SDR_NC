@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<block>
+	<name>Zero Padding</name>
+	<key>s4a_zero_padding</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>zero_padding($input_stream_length, $output_stream_length)
+	</make>
+	<callback></callback>
+	<param>
+		<name>Input Stream Length</name>
+		<key>input_stream_length</key>
+		<value>(fft_length + cp_length)*(1 + 1 + 1 + 1)</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Output Stream Length</name>
+		<key>output_stream_length</key>
+		<value>512</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>in</name>
+		<type>complex</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>complex</type>
+	</source>
+</block>

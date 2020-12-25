@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<block>
+	<name>OFDM Transceiver</name>
+	<key>s4a_ofdm_transceiver</key>
+	<category>Tools4SDR</category>
+	<import>from s4a import *</import>
+	<make>ofdm_transceiver($working_mode, $fft_length, $occupied_tones, $cp_length, $preamble_block_rep, $pilot_block_rep, $data_block_rep, $silence_block_rep, $preamble_coeff, $pilot_coeff, $data_coeff, $timeout_ms, $usrp_tx_unit_number, $usrp_tx_side, $usrp_tx_interpolation, $usrp_tx_frequency, $usrp_tx_gain, $usrp_rx_unit_number, $usrp_rx_side, $usrp_rx_decimation, $usrp_rx_frequency, $usrp_rx_gain)
+	</make>
+	<callback></callback>
+	<param>
+		<name>Working Mode</name>
+		<key>working_mode</key>
+		<value>1</value>
+		<type>enum</type>
+		<option>
+			<name>Debug Mode</name>
+			<key>1</key>
+		</option>
+		<option>
+			<name>USRP</name>
+			<key>2</key>
+		</option>
+	</param>
+	<param>
+		<name>FFT Length</name>
+		<key>fft_length</key>
+		<value>128</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Occupied Tones</name>
+		<key>occupied_tones</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Cyclic Prefix Length</name>
+		<key>cp_length</key>
+		<value>16</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Preamble Block Rep</name>
+		<key>preamble_block_rep</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Pilot Block Rep</name>
+		<key>pilot_block_rep</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Data Block Rep</name>
+		<key>data_block_rep</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Silence Block Rep</name>
+		<key>silence_block_rep</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Preamble Scaling Coefficient</name>
+		<key>preamble_coeff</key>
+		<value>1/9.6571</value>
+		<type>real</type>
+	</param>
+	<param>
+		<name>Pilot Scaling Coefficient</name>
+		<key>pilot_coeff</key>
+		<value>1/13.9017</value>
+		<type>real</type>
+	</param>
+	<param>
+		<name>Data Scaling Coefficient</name>
+		<key>data_coeff</key>
+		<value>1/32.0</value>
+		<type>real</type>
+	</param>
+	<param>
+		<name>Timeout (ms)</name>
+		<key>timeout_ms</key>
+		<value>1000</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>USRP TX: Unit Number</name>
+		<key>usrp_tx_unit_number</key>
+		<value>0</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>USRP TX: Side</name>
+		<key>usrp_tx_side</key>
+		<value>0</value>
+		<type>enum</type>
+		<option>
+			<name>A</name>
+			<key>0</key>
+		</option>
+		<option>
+			<name>B</name>
+			<key>1</key>
+		</option>
+	</param>
+	<param>
+		<name>USRP TX: Interpolation</name>
+		<key>usrp_tx_interpolation</key>
+		<value>128</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>USRP TX: Frequency</name>
+		<key>usrp_tx_frequency</key>
+		<value>2422e6</value>
+		<type>real</type>
+	</param>
+	<param>
+		<name>USRP TX: Gain (dB)</name>
+		<key>usrp_tx_gain</key>
+		<value>20</value>
+		<type>real</type>
+	</param>
+	<param>
+		<name>USRP RX: Unit Number</name>
+		<key>usrp_rx_unit_number</key>
+		<value>0</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>USRP RX: Side</name>
+		<key>usrp_rx_side</key>
+		<value>0</value>
+		<type>enum</type>
+		<option>
+			<name>A</name>
+			<key>0</key>
+		</option>
+		<option>
+			<name>B</name>
+			<key>1</key>
+		</option>
+	</param>
+	<param>
+		<name>USRP RX: Decimation</name>
+		<key>usrp_rx_decimation</key>
+		<value>64</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>USRP RX: Frequency</name>
+		<key>usrp_rx_frequency</key>
+		<value>2422e6</value>
+		<type>real</type>
+	</param>
+	<param>
+		<name>USRP RX: Gain (dB)</name>
+		<key>usrp_rx_gain</key>
+		<value>20</value>
+		<type>real</type>
+	</param>
+	<sink>
+		<name>data_tx</name>
+		<type>byte</type>
+	</sink>
+	<source>
+		<name>data_rx</name>
+		<type>byte</type>
+	</source>
+	<source>
+		<name>metrics_rx</name>
+		<type>complex</type>
+		<vlen>$occupied_tones + 1</vlen>
+	</source>
+</block>

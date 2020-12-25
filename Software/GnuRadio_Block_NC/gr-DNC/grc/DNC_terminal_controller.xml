@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<block>
+  <name>Terminal Controller</name>
+  <key>DNC_terminal_controller</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.terminal_controller($packet_size, $guard_interval, $end_node_id, $relay_node_id)</make>
+  <param>
+    <name>Packet Size (bytes)</name>
+    <key>packet_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Guard Interval (bytes)</name>
+    <key>guard_interval</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>End Node ID</name>
+    <key>end_node_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Relay Node ID</name>
+    <key>relay_node_id</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in0</name>
+    <type>byte</type>
+  </sink>
+  <sink>
+    <name>in1</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out0</name>
+    <type>byte</type>
+  </source>
+  <source>
+    <name>out1</name>
+    <type>byte</type>
+  </source>
+</block>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<block>
+  <name>LC Decoding</name>
+  <key>DNC_LC_decoding</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.LC_decoding($image_width, $image_height)</make>
+  <param>
+    <name>Image Width</name>
+    <key>image_width</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Image Height</name>
+    <key>image_height</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in0</name>
+    <type>byte</type>
+  </sink>
+  <sink>
+    <name>in1</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

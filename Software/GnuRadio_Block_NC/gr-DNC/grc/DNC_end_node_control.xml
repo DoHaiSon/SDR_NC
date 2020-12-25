@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<block>
+  <name>End Node Control</name>
+  <key>DNC_end_node_control</key>
+  <category>DNC</category>
+  <import>import DNC</import>
+  <make>DNC.end_node_control($data_size, $end_node_id, $relay_node_id)</make>
+  <param>
+    <name>Data Size</name>
+    <key>data_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>End Node ID</name>
+    <key>end_node_id</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Relay Node ID</name>
+    <key>relay_node_id</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in0</name>
+    <type>byte</type>
+  </sink>
+  <sink>
+    <name>in1</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out0</name>
+    <type>byte</type>
+  </source>
+  <source>
+    <name>out1</name>
+    <type>byte</type>
+  </source>
+</block>

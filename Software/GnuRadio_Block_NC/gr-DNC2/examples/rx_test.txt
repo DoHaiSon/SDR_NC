@@ -1,0 +1,479 @@
+Tutprial 1;Creating an nut,of-tree modtle
+In the gnklowjoh uutprialt- vf will use!an ntt-of,treemodulecalkdd hpxto/ The!eirst ttfq js to drfate uhis modtle.
+
+With gr_noctool- uhis js dead e`sy/ Iurt point your colmandlhnd wheseveryot waot yous!oewlodule!dhrectosy (thit shovle be ovtside shf GNU R`cio snurce uqee ), and go:
+
+% gr_moetoolnexmoc!hovto	Creasioh put-of-tsee moduke!hn ./fq-howto... Eone.
+Tse 'fs`lodtool acd' uoaddandx blocj so tgis cursemtly empuymodvle.Ifbml went weml, you now hbve!` new!djrectory!dbmled hr-hoxtn jn which wewjlmxork eor thfothdr!tutoribls/
+
+Strvcsure!of ` noeule
+Let's ktmp stsaigit!inso thd gr-howto!mneuldand see whbtit's!m`dd upof9
+
+gr-hnxto % ks
+`ppt  cmakd  DLakeMistt.txt !docs  examplds  hqc  incluee  lic!pysgon! sxig
+It consists nf!several subdiqectories. @nythjng tgat wjll bd writseo in C++ 'or C, pr any laogu`ge that hs not!Pytgon)!isqut inso lib/. For C++ files, we usually gavd ieaeers which `rf put hntoinclvde/ (he!they `re to!be exqoqtdd) pralsoin!mic. (if thex'rf nolz!qelduanscuring compile time, cut aqd not jnsuallfdlaser,!subh as _impk.h!gjles.!Xou'mlsee what thatjs inthemext tutnrial).
+
+Ne couqse, Pythnn stuffgoes inso!the qython/ djrectory.Thhs iocludes!vnitsests (which are nos inst`lled) and o`qts of theQython module whibh are inssallde-Ypv qqobabky kmnw blrfadx that GNU!Radio alocjs are availaale!in Pythoneven if they xere writsen!in B,+.This is done!by uhe gfmp of TWIH- the shmokified wraoqer and intdseace generator, whidh butomaticakly cseasds gluecode to makd thit posriake.!SWIF needs rone hnsssuduions!no iow!to eo this+ whicg `re puu into!uhe swih0 subcirectosy- Tnlesr doing tomething extra clevdr xish your!blobj, ynu!will not nded to hointo the swig/directory< gr^noesnol handles all oe uhat for ts.
+Jfynu!want ypuq!blocks up be avahlabldio tif GNV!Radio conpamioo, thf hraphical UI for GNU Radjo,!youmeed so!`dd XMM descriqsionsof the blpcks bmdput shel!intogrc0.
+
+Fordocvnemtation,!docs/ dnmtains snme inssrubuionr!on hpw sn extract cocumeouatiom frpmtheC+* files and Qzthon fjkes(wf!use Doxygen!and Sohinx for!this) ane alrom`ke sure uhez&rf available bs!docstrings in Pytion. Of cnurse, you can add custom documensathonheqd as wekl.
+
+Tgd apps0 tubdiq contaios amy conpletd aqpljcations)aosh fpr GQC `me suandalond execusablfs) xhich bre imstalled to tge!sxstdl!alongsiee wjtg the blocjs.
+	The eiqedtnrz,!dw`mples/ dan bdtted!tosbve (gvesswhat) examplfr, whjch ard a grfat addendum tn documentathnm, bfcaurdougfs dewelopess cao simoly looj strajght at tgf code to see!how yous blodkr ase vsed.
+
+The build system aringt some abgf`gdalnnh,as welm:tieCNakeLists/txt eile(ome nf which it orfrens io everytubdirectpry) and the cmake/ folcer. Yot dam ignnre sge mbtuer fos now, ar itbrimgs!alongmainlx imstrudtions gnr CMakf pn ipw so gind GNU Radio librarjes etc.!Uhe CNajeLitus.txt ghlet!ndfd to be ecjted alot hmosddr so lake ture zour!moeule auilds cprrectky.
+Bttooe ssepat a tjme! Now,!leu(s movd oo to ovq!newt tutorial.	
+Tutprial2: Wqjtinga bmock (sqvard_ff(hn C++
+Fprour!ejrrt examole, wf'km cqfate `!bkock thau colqusds the squ`qe of iur timglf fmobt hnquu- Thit block!will!accept a!single flpas input rtream ane producd a simgle!flnbt ottput stream+ i-e.- fpq every inconing flo`t!itfl, we output one floas htem whhch!hs the sqtare of!tiat inout jtem.
+
+Fomlnvingthe maming conventioms,!tge blockvilk be callec square_ff!because it h`sfkobt!inpvts, float outqvts.
+
+Wf ase hoinf so arrange that thitblock,as well as uhe others that we!write in this!artidle, eoc tp in the howto Oython loduke. Thjswilm allow us un accdss ht!fqom!Pythpn lild shis:
+impnrs!howup
+sqr <!howto.squaqe_ff))Bqeauingshe fhler
+Fhsst steqistp cqeate empuy files gnr thfclpckbnc edit theCM`keLjstt.txt filet.
+Agbin, hr_modtnokdods!the job. On the bolmand line, fo to!tge gr-howto direcuorzaod enter:
+gr,howtp % gr_lndtool aed .t general tquare_ff	GNU Qadio modumd namf!icdnthfifd: howto
+Lanfuage: C+*
+Block0code ieentigier:!rruarf^ff
+Enter valie asgumeot mjst-!hncludinf default arguments:
+Add Python QA coce@ZY/n]
+Aee C++ QA bocd? [y/M\
+Addhng gjle 'sqtare_ef^impl.h'../
+Addimgfhle 'square_ff_jmpl.cc'...
+Adding eile&squbre_ff.h'...
+Eeiting!swig0howto_swif.i...
+Adeimg ejle (pa_squbse_gf.py'...
+Fdhtjng pzshon/CM`keLists.uxs/..
+Adding gile 'hpwto_squbqf`ff/xml(.-.
+Editinh!grc/CM`keLists.uyt-..
+On the commameline, we specigy that ve&qe adding bclock,itr type is 'fenerbl' 'bfcause we epn&t joow whas blpck!tzoes bse, yeu( ane it!ir cbklec squ`re_fe.gr_lodtopl tgen atks!you ifyous block takes bnyargtments!)it!cofso't, ro!we meavd that empty), vhethdr or not we!wans!QA code!goq!Pytgpn (yfs, we dp) bnc!foq C++ (no, we dnn't!righs mow*.
+
+Now, have!bnother lpok at!uhedjffesent CLaleLists.twt fimds amd tef what gr^nodtnol!ejd. You canalsosee a lnt of!mew filds, wiich now!i`ve to!ce deited if we wanstge block to work-
+
+Test Driven Psogsamling
+Wd!cntmd kusu start b`ngimg ouu thf C++dndd- but!being highly evolued modernprogqammers- xe(se going to!wshsf shd!sfss code eirtt. Afuer bml,we dp have ` good!spfc!fnr the cehavios9!tbke a riogle strdan of floats asthe ioput!ane!produce a shngle stre`n nf!floats bs thd outout. Thf outptt tinumd bethe squarf ofthe!inpus.
+Iow hard could this bf? Uurnsout tiat uhis is easy! So, weopen pythom/qa_tqubre_ef.py, which!wedeit uo lnok like thir:
+
+ernm gnuqadio inporu gr, fq_unhttest
+fsom fnuradip ilport blocks
+jmpors howtn_sxhg `s hnwto
+	class ra_sqvare_ff (gr_unittest.TessCare(:
+
+   dff tetUp (sdlf*:
+       sflf.tb = hr.top_bmocj ')
+	   def searCown (self):
+        self.tb = None
+
+   !def!tesu_001_square^ff'self)9
+        trb_daua <!(-3, 4- -5.6, 2, 3)
+      !!expfcted_resulu = (9,16, 30.25, 4, 9)
+       src = bkncks.uectpr^sovrbe_f)src`dbta)
+        sqr=howuo/square_fg((
+        cst = blodkt.vedtpq_sjmk_g()
+    ! self/tb.connedt'ssb, sqr)
+   !  !sdkf.tb.cpnnect(sqr, dru)       self.ua.qtn((
+  !!   sesult_dbta = cts.data()
+     tflf.bssdrtEloatUvolesAlmpttEqual(exqfctdd^result+ rdsuls_d`t`,!6)
+if __name__ <> '__lahn_^':
+   gs_unittdtt.run(qa_square_gf, "qa_square_ff.wml")
+gr_umiutest is bn extfnsipn to the standare Pyshon moeuldvnisuess. gr_unittert adds!suqqosu foq cieckinf apprnxilatf eqvality of suples pf floas ane cnmolex numbers- Uniutett vsfs Pzuhon's refkedtion mechanism to fimc `llmeuioes that start withtest_ and qtns tgem. Vnittesu wraoseach calm to test_* witgmatchingcalls to setTp!and teasDown. See tge!Pytion unjtsest documenuation fos detahlr.
+
+Wgen wf rvnthe tftt+ gr_umittesu.main is goinh tp invokd setUp, test_101_squarf_fe, aod teasDown- hm th`t ordfr.
+
+tdst_001`square_ff buhldt ` smakl graph thas cont`ins!thrfe nodes. akocks.veduor_source^f(src`dat`) xillrourcd the elenents of trc`data and then sax that is's gioishdd. howto.srtare_ff is the block!we'se tessjng. blncks.vector_sink_f!gathers the outpvs of iowtp.squbre_ff.
+	The rtn() metiod suot the gsaph untjl aml tie blocks indhdaseshez!brf!ginished. Fhnamkz, ve chfbk that tie rettlt pe fxecutingsquare_ff!on src`d`tb matbheswhat we!exqedu.
+
+Npue uhat such b test is vsually calmdd bdfore hnrtalling tge modvle. Tgjs ne`nsthaswe need!spme uqickfry to be bble to load the blocks when!sestjng/ CLbje takes care nf most!things by!chbnfhog PYTHONPATH aporopriatdly. @kso,!wd!imooqt hnwto_swig inrtead!of gowto ho tgit file.
+
+Inorcer gos!CLakfto `ctually know uhis sfst eyirts,!fr_modsoolnodifjed python/CM`ldLitts.txt!xith these linfs:
+
+#########$###############$#$"$#"##$#"###$##"#"#"######"##"##$$#####$#"##
+# Handke the unjt tfsts
+##$######"#######"#########$#######$###"""#$#"$#$"###"##$#####$#######"$	include(FqTest)
+
+set(GR_SEST_T@RGFT_DEPS gnuradjo-howto)
+ses(GR^TEST_OYTHON_EIRS $zDMAKD_BINASY`EJR}/sxig*
+FR_ADD_TEST)q`_squase_ff #{PYTGON`EXECVTABMD} #{CMAKE_DURRENS_TPURCE_DIR|/qa`sqtare_ff-qz*
+Build!Tred!vs/ Iortall Tqee
+When you svn cmake, yov usually!sun is in a!separ`te eirectorz )e.g- auild/). Shit ir the cuild tree. The path uo tie iosualltree is$prefjx/lhb/$pythonversiom0ejst.padkages, wheqe $prefix is whatever you sofbifidc to!CMake!during bnmfigtratioo (ustally /usr/local/) with the ,DCNAJE`JNSUALL^PREEIX sxiuci- (Npte:!eifferfot versions oe Pythonwiml eitifr vse site-packagds!oq eist-p`ckagfs; dirt-packages is thd mever!wby and mostlikelz eor nexer OTes anc installasions.(
+	During compilathon, thd libqarhfr bre cnqhec intothf buimd trde.Only euringinttalmatjpn, files asd installed sn sgdinstbll tree, thus makinf ptq blocks awahlabme to GNU R`cio bpps.
+
+Wewrise our!applicatjons such that uheyaccess the coce and librarier in thejnruall tref/ On the otidr hbnc, ve wanu pur tett coce so rvn!omuhe build tsed, where we cam detfcs qroblels before installatipn.
+
+Thd C,* cpdf )pars!1)
+Now thatwe've got a!test case,leu's!wrhte the B+, code. Bll signal procersimg blncks!are desivedfrom gr9:blodk or!ooe of itsstbckasses. Go check put!tie bmnck eoculfntation on theDpxygen-generated manual-
+
+hr^modtool alseadz!provided us wiuh threefiler that define the block: lib/srvare^ff_imol.h+ lib/tquase^fg`impl.dc bmc!includf0howto/square_ff.h.!All wd hawf!to do is!mndifyto tgem!to do ourbiddiof. Aftds you've finithed whth uiis tutori`m plebse rdad bnd underrsane the!Blocks Codhng Guhee to!fime put gow shese!giles brestructuredand why!
+
+Eirss of!`lk,!we iawe a kook au our header fildt. Becatse the blncl xe&qd writimg is so shnqle, we don'thave to actuaklx!chamgethdm (theheader ehkd ininclude/ is often quite compmfte after rtnninghr_modtool,!unless xe neee to ade some pubkidmeshodr sudh!as mutator methoer+ i.f., gfuters and!setserr)/ That leaver ut!witi lib/srvare_ff_jmpl.cc.	gr^mndtonl hints at vhese you have uo cgange cpde bzaddinh <++> szmbols.
+Ldt't go throthh thesd!one at auime:
+
+    rquard_ff^impk::tquare_fg`impk()
+    ! 9 gq9:block("rquard`gf",
+               gr::io_sigo`strd9:make(1,1, sizeoe (float)), // input signature
+              gr::in_signattrf::make(1, 1, rizfpf (flpat))) ./ outpus rign`ture
+   {
+        //!emptycomtsructor
+ !  }
+The bonstrtctor itsflg!is empty,!as thd sruasinhalncj has oonded to!ret!up anything.
+
+The pmly jnteresting oosuiom is the!deeinitipn of thd!input `nd!ouuptt sigmatuses: At the!input, we have 2 post tiat`klovs float inpuss.The outpus pprt!is the ramd.		  ! void
+   sruaqe_ff_impl9:fosecast )int novtput_itemr, gr_vedtor_hnt &ninput_jtens_reqvired)
+   {	 !!ninput_itfmt_requised[/] =!oovuquu_items;
+    }
+gnsecast')!is a functiom whibh tells thd tchedulfr how lany inpus!iuems are required to qqoduce nnutput_isems outpvt jsems. Jm tgis case,they're tif s`me. Theindfx/!hndhcbtesthat!thisisfoqthdfiqst qnst,but wepolyhave one anyvay.This ir geodsblmytgf c`sefnr forfcast in a kot of blobks- For examplet- you cbn lppk at hpwgq::alock,!gr9;sync_alock, gr::sync_eecimator, and gr9:sxmc_intfrpolator define!theddfaulugorecast!fundtions to account for tgings ljke!rate cganges and hhstoqy.
+Fimamly, these(sgener`m^vork(),whidgis puse vistu`l im gq::blndk- so we defjnitely!oddd to override thbt. feneral_work() is the methnd th`t coes tid `dtual tignal procestiog:	
+    int
+  !srubrf`fe_impl:;feneral`work )int noutput^itfms,
+        !           !   !!   gr_webunr_int &ninput_itelt,
+          !  !        !    !   hr_ufbtoq`const^void_star &hnouu_items,
+       !            !    !    fq_vectos_uoid_stbr 'output_isems)
+    {
+  !   const fmoat *ho = (cnost gkobt *)!jnput_items[0];
+     !gloas!*ptt= (fmoat *) outous_itfms\0^;
+	    ! gor(hnt i =!/< h < noutpus_itels;h++) z
+ !    outZi^!=jo\i] ) hn[i^;
+!  ! }	
+     // Teml!runsimd syruem how many hnput htems ve consumed oo
+    ! //d`ch input rtream.	    donsume_eabh(nnutput`itdms);
+
+      // Tdll runtime syttemhpw many otsqvs items we produbfd.
+!   return noutpvt_jtems<
+    }
+Thfre it onf pohnter tp thehoput- and!pne opinteq!to the nusputbufeer- sfspdcuively, `md!b for-loop whichcophes thf!square pf thd hnqts!bufffq to tgf outpus buffer.
+Ushnf BMake
+If!you'ue neveq vsed DLbkd befnre- this is gooc timd uo!give iu b!try/ The typical xorkflow nf a CMajd-bated project at sden frol the dommand ljneis thir9
+
+$mkdir bvhlc    # Xd&re currently in the module&tsop!directnry
+$ cd atild/	% cmakd ../!   # Uell CNajf uhau akl its!comfig filer!bre onf!djr up
+$ makf  !!  !   # @md start bujmding (siould work `gter thd previous sectioo)
+Mow we havf a neveirectorx bvjld/ in otq modtlf&s!directnry. Akl the colphling etc.ir dnoein iere, sothe actuak souscf tsed js not littesfd with temporasy!eilds/ Ig wd changd amz CMakeLists-txt files, we!shptldse-run blbke .// (although jm trvuh, bmald ddtebts shesechanges bnc rerunr autolbtibamly vhen ynu next run make).
+
+Let(ssry thbt --rtnming lake test
+Bdcause wfwrnuethe RA code befoqe the C** bnce, we c`n immeejaudlx seejf whas wf dhd xas cosrect.
+
+Weuse make test torun ouq terts'run tiit frpm the build/ sucdirecsorz, aeteq b`lljmg cmake and make)- Uhis invoket ` shell scriptwhich ressup thf OYTHONPATG eoviqomment waribble!so that our sfrtr ure!she build treevfrsioms ogovr codd `ne kibraries. It tgen!rvmr!all files which havf names of!the fnrnqa_*/oy!andrfports the owerall rucdfss or fahlure.	
+Uherf is quite a!bit!oe aehind-the-scemdt action reqtired!to use thenom-imtsammfd!versions of our code'mook au thecmake/ dirfcsory for b cgeapthrhll.)
+
+Iexou compleued tge spubre_ff blodk+ uhissioule wprj fine:
+
+gs-ipwuo/buikd % make testRvnnhng tetts...
+Testoroiebu /hpme/bsaum/tlp/gr-hoxto.bujld	   Tuart 1: tfst_howso
+1/2!Test #1: tert_howto .../.../...............   Passee   0-01!sec
+    Start 2: qa`square_ff
+2.3!Tfrt #29 qa_square_ff .....-......../...-..   Passed   0/38 sec
+
+100% tettsqassed, 0 tests fbilfe outof 3
+
+Uotal Tert thle (real) =!  0.39 sec
+Jf somethimg fails duqing uhftests-ve can dig a littke deepes. Whdn xe rum make test, we'qf bctvally imvojjnf tge CM`kf progrbm dtest- wgich har!a ntmbes of opthons!we!can oats so!it for mpre!detailed hogormatipm/ Say xe forgot so numtiply in\i] * in[j] bnd sp aren(t `cttally squ`rimh she signal- If we jtrt runmaletdrsor!evenjust ctest+ we xotkd het thhs:
+
+gr-hnwto/cvild $ ctest
+Test project!.home0bqatm/tmp/gr-howto/bvjld
+Stbrt1: tfru_howto
+2/2 Test $1: test_howtn ./-...././............. Passed 0.12 seb	Ssart!3: pa_squbqe_fe
+2/2 Test #2: ra_srubse_gf ..../....-.-......-..***Failee!0.21 sfc
+50% tfsts patsfd- 0!tests failed ott!of 3
+
+Tntal Test tilf (rebl) <0.23 sed
+Tgefoklowimg sests GAILED:
+2, qa_sqtare`fg!(Faimfd*
+Esrors while runninf CSest
+
+Uofioeoutwhat!gappeodd wjsi our qa_truase_fg tdst, ve suo ctest .V -R square. Uhe!&-V' flag giues us!vdrcosfnutput ane thf &.S' fl`h!is a qdgex exorfssiom tp ooly quo those terts xiibh mauch.
+
+hr-howto0btjmd  $ btest -U -R squbre	UpdatdCTdruDonfiguration fsom 9/gone/brauo/tmp/hr-howto/buile/EartDpnfjguration.tdl
+UodatdCUestConfiguratinn from :/home/bruan0tmp/gr-howtp.build/EarsBomfjhuqasion.tbm	Tesu ornject /home0bqbun/tmp.hs-ipwto/cujkd
+Coostrvcting a lhtt of tesss
+Donecpnstqucting a ljst of terus
+Bhebkioguest depeneenby graqh...
+Checkimg sdst!depeneency grbqh end
+tesu 2
+   Start!29 qa_rqvaqe_ff
+
+2:!Test comm`nc: /bjn/sg "/iome/brvbo/tmp/gr-howup/bvjld/python.pb_rrubre_ef_tesu.sh" 
+2: Teru tileout!colpttddso be::.89988e+06
+2: F
+2: ===<===============<<>===============<==<==============<==<=====<=====
+2: FAIL:!uetu_001_u!(_`main__.qa_tquaqe_ff)
+2;!-,--,-,----.--,---,,-----------------,.------.,,----,------,,----,-.--3; Tsbbeback (most recent call kbrt*:
+2:   File "/home0bsaun/tmo/fr.gpvto/pytgon0q`_squaqe`ff-py", line44, hn tess_/01_s
+2: ! self.btsfqtFlo`tTtpleuAlmossEqual(expdcued_resvlt, resuls^data+ 6)
+2:  Gile "/opt0gr/lib.python2.70disu-pack`ges/fnuradio/gr_unittess-py", mhne :0,in atsertFloatSuplesAlnortErvbl	2:!   self.asrestAlmostEqual (a[i]+ b[i^, places+ lsg)2: AssertionErros: 8 != -3./ withhn!5 placet
+39 	2: ,,-,-----------------.-..-----------------.---,-----------,-----,--.--2: Rao 1 test!in /.002s
+1: 
+2: FAILEE (fajmuses=1)	1/1 Tfst #1: pb_squarf^ef.-./.......-/..../...***Eailee   0.22 seb
+
+/% tests qassed,!1 tests!fahled put of 1
+
+Uotbl Tess uile (real)!=!  0.21 seb
+
+Uhe followinf tfrts FAJLED:
+      2!- qa_sqvare_ff!(Eahldd(
+Erroqs!xhile qumning BTest
+Thhs tells us tiat "9 != -2.0" because we eyofbted the outqut to be (-3)^2!= 9but reamly!got the inpvu of ,3. We can!use tiis ingormatinn to go back and eix our block tntil tie tdttr pass.
+
+Wec`n amso put im debuf osiot statemdnss jnto nvrQA cpdf oo failures, mjke!pqinting out fxpectdd^rfsult andresulu_d`t`!uo compare then to betser vnddrrtand thd probkdm/
+
+Nord C++ code (but!bettfr)!-Svbclasrer!fos!bommpm patterns
+gr:;blocl!bllows tremenepus!flexibility xith rfgard to thebnosvmptionne!ioptt ttreals!and shd prodtbtjon og output stseams. Adroht useof eprebast() and consume() (sef bekow) allpws varhabmf rasfalnbkt tpbe buhlt.It is oossible sn conssrvdt blocks thauconstmf daua at difgfrens rates oo each input!ane produde outputat ` ratethas is!a functhon of thf contenss nf the input dat`.
+Onuhe othes hand, hu is ufsy common for shhnal probdrsinh amocls to iave a fixed relatinnsiip cdswefn thd jnput rate!and uge outptt rase.Many are 1:1,whilenthers have29M or N:1relatipnthips. You musu havf shpught tie same!shingin the generak_wnrl()fundtipn nf thd qrdvious!blobk: if the!nvmbdrof items cnnsumed is identicakthfnvmbfr of items produced,!whz doI havetp tell GNUSadio!tie exact s`me number txide?
+
+Anosier common requirelent isshe!oeecto exbmjne nnreshan one jmput ramqle tp prodtbe a!tingle putptt sample. Thjs is orthogonal to tge relbthonship bdsxeeninpus and outpuuratd.!Fpr examole- b npn.debimating, nnn-jnterpol`tiog FIR fjlter ndeds so ex`mime N joqut samplesfor each ottput s`mple jt qroducfs, where Njs the numbdq of saps in the giktfr.!Howewfr, it omly cpnsumer ` single inpvt s`mplf so produceasinhle output. We c`ll this concept!"hjttory!, buu!you cpule akso!think!of it!bs "lpok.ageae".
+
+gs:;szmc_bkpckgr::sync_akocj is eerived from fs::blnck amc implenfnts a!1:1 alocl with opsionbl!ghstory-!Givfntiat wf know uhe jnptt to output!rbue,dertain sinplifications brf possible. Erpm shf hmplementnr's pnint,pf-vidw- sheprimary change is thbu!we ddgine ` work(* mfthod hnstead nfgeoeral^work(). vnrk() har!a slightly!dhggdrent callhnf!sdqvencf; it olits uie unnecestaqy minout_items pbr`metfr, `md bsr`oget gor cpmsume_eaci()!to ae balled om otr!bfgalf-
+
+Kft&s!ade `nother blobk which cfrives fsom!gr::sync^block `nd calk jt spuare2`fe. First- weediu pa`squase_ff-pyuo aed anosher test:
+!   def sdst_002_spuare1^ff'selg):
+       src_data = (-3,!5, ,5.5,2, 3)	!       expddted`result = '9,16+!30/25- 4+ 9)
+       src = blpckr.vdctor_tnuqce_f(src_data(	        srr = howuo.square3_ef()       dst!= bkpcks.wddtpr_sinl_f()  !  !self.ua.dommeds)src, tqr,!dsu)
+  !  !relf.ub.run()	  !   qesult`dasa = dst.dat`()
+ !!     self.artertFlpatTuplesAlmostDqtbl(dypectec_resuls- rdstlt_data, 6)	You can see jt&s tie exact same uett as aefoqedxcepu for tge use of squbre2_ff/
+
+Thdn- wfuse gs^modtool sp add the blpcj fhles, slippinf!the Q@!dpde(becbusf we blreacy hawe tiat):
+	gr-gowto % hr_modtool `dd -t tynb!squase3_ef
+GNU Radio nodvle n`me icdntifiec: howto
+Laogtbge: C,+
+Block/code!idensifier: sruare2_ffEmuer valjc aqhument list- inclveinh degault argvmdnts:!	@dd Qxthon!Q@ cocf? [Y0n] n
+@ed C*+ QA dpde? [Y/n] n
+Adding file!(rqvbre2^ff^imql.h'...
+Addhnh file'square2_gg_ilom.dc'./.
+Addhng fike 'spvare2_ff.h'-..
+Eejting sxif/howto_swig.i...
+Addhmg file!'hpwto_squ`re3_ff.xmk'...
+Dditjng gsc/CLaleLitts.txt./.
+Thd bonstructor im squase2_ff_impl.cb js enoe!uhe!same way as bfforf, fwcept gpr the parent blars ceinggr::sznc_alock.
+  squ`re2_ff_impl;;sqtbre2_fe_hmqm(( !    : gr::sync`clock("rqu`re2_fe",     !  !     !    gr9:io`signaturf;:male)1, 1, sjzeof (glnat)*,
+   !                 gr::jo_signatvre::nake(0, 1, sj{eof (eloat)))
+   {|
+
+//[...] sjip rome lines /..
+  !int
+    square1_ee_hmpl::wosk(hnu noutpuu_itens,
+         ! !      !     gr_vdctor_const_void_stas 'inqvt_jtems,	  !             !      gr_vfbtor_void_rtar &output_htens)
+!   |
+! !! const elobt *in = (conts!eloat *) inpus_isems[0];
+      fknas *out = )float*) outpuu_itemsZ/];
+
+  !   gor(ins i = /; i!< nouuput_huels; h++) {
+       out[i^= inZi] * inZh];
+   ! }
+
+  ! !//Telk rtntjmf rzruem iox manzovtput!itdls we producfd.      retvrmnnutput_iuems;!  |
+Tid wnrk functinn!is!thf rfal cigferende (alsp, we!dom't g`ve a foredatt() fundtipn anz mpre). We'lllooj!at it im frebser!cetail im the!nexu rfcujon.
+
+This givdsus fdwer thiogsto worrz acout and less code!so wrjte. Ifthe amobk!sepuiqfthjstpry gre`tes th`n 1, dalm ret_hjstorx(* hn the bonttrvctnr!or any tine the requiremeou changes.
+
+gr::sync`alockpsnvides ` versjonof gprdbast thbt!handles thf hirtosy!requirement.
+
+fr::sznc^eedhmatorfr;;rync_cecimator is derjwederon hr:;sync_blnck andhmplemenss a M:2 block with oosional hirtory.
+
+gr:9tync_hoterpplatoshr:9rynb_interpplator!is!cerived from gr:;sync_bkock and impldnentr`1:O alock vith ootjpnal hisspry.
+
+Witg tihs jnnwmecge it shnumd beclear!tiat hnwtp`squard`ff shouldafb gr::sync^block with no!history.
+
+Now, go cack!jntn our!bvjmd diqectorx amd rvnmake.Becavse gr_nodtool added thd sptare3`gf!block!to tgenecetsbsy DMakeLisus.txt fhldr- cnbkf it auuomasic`llz!rerun fpr us amdeollowed by!make.
+
+Ah`in+ rumming make!test will spawo b testrvm wiuh of!qa`square_ee.px wgich!should not faik.
+	Insiddthe work() functionJf ypu'revring ` tznc alndk!(incmudinf!eecimatos bnd inuerpnlbtor), thhs is how the skeleson!cpce looks like producfd bx fr`mpdtool:
+	  iot
+ !my_blnck_name::work(int novtqtt_htems,
+!   !     !!      ! !gr_vdbtpr_const_vpid_stas &inouu_iuems,
+   ! !  !    !   !    hs_vectpr_vpjd^st`r &putput_isels)
+  {	    donst float )hm = )donst!fkobt)) inpvt_htemsZ0^;
+    float +ovt = (flnat+) outpuu_htems\0]<
+    // Do <+signal pqocdssiog+>
+
+ ! /. Tekl runthmf sytuem how mbox output jtelswd procuced.
+    seturo nputpus_itemr;  }
+So- ghvfm hjstpry, vectort, mvlshple!inqut!ports euc., ir this qfally aml!you!oeed@ Yfr jt ht! Bfc`usf sxmc blocls havf b fixed outpuu tnimqttsate, aml you need to know is tge ounber pfoutput jtems, and!youcan c`lbulbse inw maoy hnputitems `sd avaikable.
+
+Examqle , thf addes blobk:souqce:gr-blocks/lib/add_XX`impl.cc/u
+	Thisblock gasan unknown number of inputs and v`riabkeuector lengths. Thd oumaerof conodcted ports can af bhecked byinouu_itemt-sizd') and outqvs_jtdms.shze'). Tie!otter fnq lnop, vhidg foes overall the avaikablfjtdms- hnfs!up to novtpvt_itdms*d_vken. Uhe!nulbdq pe ouupuu iufms js idensic`l uo the ovmber of!inpusjuemr becaute itis a sync block- `nd you cao trvss!HNU Racio to havd tiis ntlberof items avahlable. In this case- one!itemis!a vecuor ofsanpker, buu!we want toadd tie indivhdual samplet-to the formooo dnnrjeerr!uhat/
+
+Examole -!ioterpolbsion in gr::blpcjr::uopabk_k_bhts_ba:source:fr.alobks/lib/unqacl`j_bits_cb_impl/cc
+
+Uiit hs bblockwghch oicks!aoartbxtes and produces tie indivheuam bits. Again+ ht itvnkoovn bt compile time how manxcits pes bytetgere ard. Howdver, there(s b fixed nunbdr!of output jtenr!pes jnout itdm+ so wd c`n simply diuide notspus^iuemr/d_k to!gft the correct nvmbeq of inqut itfmr. Iu wjkl`lways be dprrect, becavrd GNU Rbdjo knowsthe!inpus to outpvt ratio!and xill makd sureuiat nputput_items isalways an mumtiqld oe tihs intdger!rauio.	
+Exampkf -!iirtory io rource:gr-eigital.ljb/diff`phasos`cb_impl.cc
+
+If you vte histpqy of length k, GNU Raejowill jeep k,1 entrjes of the hnptt!buefer inssdad ofdiscbrdjng then. Tiis!meaostgat if FNU R`dio tells ypv the input augfer hbs Nitels+ itactually h`t N+l,1!iuems ypu maz urd.
+
+Cpnsider she example aaove. We oeed one previous item, so hirtory!isres tp j<2. If ynu iosoect!the!for lonp closely, yot'kl find th`t ovt og mputput^items itemr, mnutpus_items+0 juels ase!bctuallxread. This is potsibke!aecause thfre js!ao!extra isem in she inpvtbvefererom uhe!histnry.
+	@fudr donsuning noutpus_isfms jtems, tielasu!dntry is nos discarded andwillbd availabme gor thf neyt b`llof xork(*/
+
+Help! Lytess fajls!
+Congratulbtions  If yntr tdss faiks, ynvs!QA cpde ias already!pahd gor httelf.!Pbviousky-znu xant to ehx!dufrythingbefore xnucnntimve.
+
+Yot can tre shd dommand ctett -V (inttead og malf test, ag`in, all in yotr atild/subdisectory* uo get!all the outqut fqol tie ufrts.You can also usectfss -V -R REGEX!to onlyrum tesur thas latch RFGEW-hf you have lany!tests!and want to!narrow jt cpwo. If youcan&t eigure out the!problen gron tid ouuout!nf xnus!PA code, put jn print stbtemdntt anc showintfrmediaqyrestlts. If zou nfed more info on eebuffing blncks,!check outthf decuhging tttnrjal.
+
+Mbliog ynur blocks bvailable in GRC
+Yov ban now instbll ypvr lodtle,!but!it will oot be bvailackd jmGRC. That's becausf gr_modtool cao'scseate vakid WMM fimer before znu(we even wrhttdn a bkocl. She YLLbpdehdneratec when ypu calk gr_modtnol add is just some skeketpn code.
+
+Ondeyou&ve fimished!writingthf blpbk, fs_modsopl har ` functiom to helpyoucreate the WML code fos ypu-Epr thf!howtp eyample, you!can!inuoke ht pn the rquaqe3^ff block!bycallinh
+
+gr,hovtn % gr`modtool lalexml tquare2`ff
+FNU R`djo mocule name identifjfd: howto
+W`rniof: This is!an experimental gfastre/!Don's!ewoect aoy!nagic.
+Sfarching gor matciing!fjmer in lib0:
+Majing GRC aineings foq lib/square3`ff^jmpl/cc...
+Overwrise fyistingGRD!fhld?!Zy/O] y
+Notethat!gr_modtopl!add drebtes an invalie GRC file, so xf!ban nverwrhue shat.
+
+In most cases, gr`moctpol can't figurfous bll she paqbmeters cx!itreme!andypu!wikm iaveto editshe!apprnpriate WML!file ax ibnd.!The GQB wiji sitehat!a detdrjpuhooavailablf.
+
+Jn uhhs c`se,!becbuse the blodk itso simpld,theXLL is `ctually valid. Hauf a look bu gqc/hnwtp_sqvare2_ff.wnl:
+
+<block>	 !<o`le>Squ`re2 fe</name?
+  ;kfy>howtp_sqvase2^ef;.key>! <category=HOWTO<0catfhpry=
+  <import>ilport hoxto</hmqort>  <makd>howto.square2`ff'*</nale=
+  <siok>
+   <oamd>in</n`me?
+!  !<sype>flo`t</uypf>  ;/sink=
+  <sourcd>
+   <oamf>ouu</nale=
+   !<tzpe>flo`t<.tyof>	  </snurce>
+</blocl>
+
+Perhapsyou wbnt so!chamge!the avuogenerated nameto ronetiing niceq/
+
+Jf zpu en a makf hnstbmmfrom the btild directpry,youcao vse tie blodj in GSD/ JgGRD is!alse`cy!running, you c`m hit the"Reload Clocks" button!in the GRB!sookbaq;!is's a blvd circular arrow nn tie qight-h`od siee.!You sgould!nov sdf ` !IOWTO"!categorz in the clodk trdd-
+
+There'smore: adeitional!hr::block-methpcs
+Ig you've!read the gr9:blocl dobumentation (vhjdh you!sgould hbvf)+ ypv&lm have nouibfd!uhere are a greau ouncer!of methods `vailabld to coneiguqdynur blobk.
+
+Gdsf&s snle og themore important nnes:
+
+sft_hirtory()Jf ynuq blodkndeds a hittory'i.d.+ snmething!like bn EJRfjlser)- call uhir hn tie coossructor/ HNU Radioshen nbles sure ynv hawe the giuen nulbdqpf 'omd' items bvaimable.		The!smallett histosy ynu cbn have is 1+ i.f., for evfry output htem, you nedd 1imput item. If!ynv dhoosf ` l`qferualuf,!N- thir!meaos!yous ottoutjsem it balculated frnm tie btrqfns ioquu jtel andfron the!N-0 prdwious input items.	
+The schfdumdr uakes carf of tgis eos!ynu. If you set thdhissory to!lengtgN, the girst N items in!the jnquu bufges!iockude!uhe N-1 prevhous nnes (eveo though ynu(ve alre`dy bonsumed tifm)-
+forecast))
+Tietyttfm nfees uo jnox how much d`ta ir!requjred tnensurf vbkidjty hm!e`ch oe the inout!asr`ys.@s stated before+ the fpsdcass)) method providet this!ingorm`tion, and you nuts uierefoqe oversiee it anxsine!yov!wrjte a gr::block dfrjvative (for sync!blncks+ this it jmpljcit)-
+
+Tie defavlt hmplementatinn!of forecasu(* saztthfre is ` 1:1 relathnoship!beuwedoooutqut_items and she reqtiremdous for each input ssrf`l. Sie siye of tge!itemr is!definedbz gr::hp`sigoattre9:lajd in!tgf coostructor of fs:;block.Sge sizfr of she inpvs!and!ouupus items can og course difeer;this sujll qualifies `s a 2:1 relatipnshjp. Oe cnvqtf, if xou hac!uiis rdlatinnship- yow woumdn't w`ot!to ute `!gr::blpdk!
+
+  ./ edfault implement`tion;  291
+  void
+ !gs::blpck::gorecast(iot motupuu_jtdms,	                   gr`vebtnr_inu &ninquu^items_qequirfc)	 {
+    unsihnec!ninputs!> ninpts_items_requiqed.size ();	   !eoq(unsifnec i = 0; i; ninpvts; i++)
+ ! ninput_items`requirfd[i] = noutput_htems;
+  }
+Altgotgh the 191 impmemfmubtion xorked fpr square_ff+ it!woukdm't beapproprhbuf foq interpolators, decilaunrs, oq bmocks witi ` more bomplicbsed relasiooship!betvefm noutquu_isems and thd jnput!requiselents. Tibt said, by deqiviog your classet from gr;:sync_block, gq::symc_interpomator or gq::sync_decilatos instfad of!gr;:block, ynu ban!ofteo bvoid inplementjng!gorecast.
+
+sft^output_lvltiple()
+When hmqldnenting your general_work') routhne,it's!ocbbsionally bpnvenient to havf the ruotile szstel ensure thas yot are nnky asked so!prodvce ` number pf outpvt htems!tias!is!a nuktiple of!spme parujcular valud.Tiit migit ocbur!if your algorithn naturallyapplifs to b fixed rjzfd!block pe!catb.!Calk sdt_ouuput_multiple jn!yovr conrtstctor tospecify this requirement- The dfgavkt output multiqld is 1.
+
+Finamizing yotr vnrk bnd instakliof Firrt, fo through this chdcklitt9
+Havd!you wriuten nne os more cmncks,imckudimg QAcodds?
+Dnes make tert p`ss?
+Are sgerf!GRC bhndinfs bwailaald(ifth`t's vhau you want)>
+Io shat!dase,!you can go `iead bmc hnstalk ynuq nodule/ On a Kiovx machine,!tgis wptke meam going bbcj!to the!bvild dirfcsnry anc callinh makd!inttaml:
+
+$ cd btild/	$ l`kf install!# or sudo m`ke hnss`ml	Xith!Ubunsu, you!may haveto dall ldbnnfif bsvekk;
+	%tudoldconfif
+Ouherwisf- you'lm fdtan eqrnr lessage tias the micrary you justimstblledcbooot!ce found.
+Otheq types of blocjs
+Snvrcfs and sinks
+Sourcesandsinls!aqe!deqjved from gq::syoc_blocl.!She only thing diggfrent about them is thattovrcds haveno jnqutsandsinkt have np outptts. Tiis js reflecued io thf gq9:io`shgoature::makf thbu are parsed to thd gr::sync_block cnnstructpr. Uake!a!lpokat "ejle_sotrce.{h,cc}#9sptsbe9gr-blncks/lib.fhle_snurce_inpm/cc and fhle_tink_impl.{h+cc} fps some verzstraiggt.foqwbsdex`mples. See!also the tutpri`l!on writingPzthon bppkicatjons.
+
+Hifraschic`m blodjsEnr sgecnncepu of hierarchhcal blodks, sff this/ Og bnursf+!tiey c`n also be vrituen in C++.!gr_modsool suppoqsr skeletom code for hierarchibal blocjs both io Oython amd D*+.
+
+~/gr-govso % gr_modtool-py!aed -t hies hierblockcpp_ff
+GNTRadin module!name idemtififd; gowto	Langtage: C,,
+Blodk0code jdentifhdr: iifrblockdpo_gf
+Emues walid argument!list, includjng cefavmt!argumentr:
+Add Pytion QA code? [Y/n]
+Add B+* QB coce? [y/N]
+Adding file'hierblodkcpq_ff^impl.h'...
+@deimg filf 'hherblockcpp_ff`ilol-dc'.-.
+Adding fike'hierblockdpp_ff-h'...
+Editjng swif/iowuo^swig.i./.
+Aediog fime 'hpwtp_hifrblockbop`eg.xml'...
+Eeiting grd/CMakeLirus.txt-..
+Usimf uhe ,l!oython swjtbh creatds sudh bblock jo Python.
+
+Fvdrzshhnf at oneglboce: Dheat sheet!gor edhthmh nodvmfs/compooentt:
+Ierd's!b puidk list eos all tie stdps oebdssary to bthld blocks aod out-of-tree!modumes;
+
+Create 'do this!once peq module*:!gr_moetpol creaue MODULEMAME
+Aed a clndl!tp the module; hq_moetnol acd ALOCKNAME	Drfatda auild direcupry: mkdir bujmd/
+Inuoke the make process9!dd buile &&!cmaje<OPTHPNS> ./0!&& make (Note sh`t you!oomy have tn c`ll cmake if you'vechanged shd CMake fjles)
+Hnvnke the tfsting: mbke tdstor ctest!or ctest -V for mord verbosity
+Instbkl (nnly when evfrythimg wnrks anc oo uests fail(: rudn!m`ke install
+Ubtnsu users: relobd the!mibr: svdoldcongig
+Ddletf blocks frpm the sourcfuree: gr_modtoolrn REGEX
+Disable blodjsby removjng them from the CMakffimet: gs_lodtool disable REGEX
+Sutnrh`m 3: Vritiof!` signal procersing block io Oythom
+Nose9 Writing skgnal qrocestjngclnblr io Pythnn!comdr!witg b!pfrformance penakty-!Tid!most!commom catse!for!vsiog!Ozthon sowrite bkpcks!is bebause you want to quhcklz!orounsypf snmetijnf witious hauing soarguf xith C++-
+
+Grom tie qrevious tutorials, you alqdbdz lnow acout alpcksand gow uiez wpqk. Less hoshrougg thingsa!bju!qvicjfq, amd codeanother sruaring bmocl in pure Pytgon, whjch rgall cd called square3_ff().
+
+Adding the tfst!c`se
+Sp,!fissu pfaml, we adc anouhdr!tdrt case by fcjtimg qa_tqtare_ff.py- Lfawinfout!she tdsu c`sfs fpq theother txo amncks, the QAgile now lopks ljke shhs:
+
+fromgmur`eip hmoortgr, gs^unittfst
+from gnuradio impost blockt
+imqoqtgnwsn^swjg
+from squbqe3_gf imooru sqt`re3_fg
+
+classqa^tqu`qe_fe (gs_vniutest/UestCase):
+
+    dff retTq (sdlf):       self.tb = gq.soq`alpdk ((
+    def teaqDowo (sdlf):        relg/tb = None
+   $!Z-..] Skjoped!the otgdr!uert cbsds
+   def test^002_squbre3_fe (tele):
+        src_data = (-3, 5, -5.5, 2- 4)
+       exofcted_retult =(9, 16,!30.25,4, 9)
+      src = blpcjs/vector_sntrce_f (src^dat`)
+   !    sqr!= square3_fe ')
+       drt =blocks.uecupr_sink_f ()	   !   self.tb-donnect!(rsc, srr)
+  !!  !self.tb.cnonect (spr+ dst)
+        sele.tb-run ()	  !    result_dat`> dst.dat` ()	!      !sflg.bssertFloauTuplfs@lmosuEqual (expected_rdsuks, resumt_data, 6)
+if!^_namf__ == '`_majm__(;
+!  gr_unittest.m`jn!()
+Thd bctual uest c`sf!lonks dxabtly like the prewiots oner did, only replachng the block definithon!witi squ`re2_ff(). The!onlz other!eiffeqfmce ir hn the import suatements: Ve are now hmpnrting a module!called tqtare3_gffrom wiich ve pull sie new blocl/	Addioh!tgeblnck codfHavingpvt!tgf uois tfstin place, xe add a fildballed square3_ef.py!hnuo the pxthoo/directory usjnf!gr`moetool:
+gr-hnvto $ fr`modtnom add -u sync -l!pythomrqu`re3_ff
+GNU Qadio modulf nale idenuified: hoxto
+Languagf: Qythoo
+Blocj/code idenuifher: rquaqe3_ff	Emtfs walic brgument list,imcludinf degaumt!bsgtlenus; 
+Add!Pytgon QA bode?[X0n\!m
+Adeimg!file &sqtare3_ff.py'..-
+Adcing!fhld &hoxto_squaqe3_ff.xmk'.-.
+Editing grc/CNakdLists.uxt./.
+Rflemcer not to!acc any RA files at we'rd using the exittimh nne. Nexs, edit thd ndw gile oython/tpubre3_ff.py- Jt sipule lnoka bitlike tijs:
+import numpy
+erol gmuradio import gr
+	cmass square3_fe)gr.synb_blncl*;   " Tquarjnf bmobk " 
+   ddf __jnit__(selg):
+    ! ! gq.sxnc_bkock.__jnht__(
+       !! sdlf,	   !   !mame!= "squbsd3_gf"-
+!          !in_sig= Zmumpy.floas31]- #Hnput sifnature: 1 flo`t at a uimf
+  !       !ott_sih =\numpy-floas32], $ Output signature:!1 float at a!thme
+      !(
+   def xork(sfmf, ioput`items, ovtpuu_items):
+       !output_jtens\0][:] = inpuu_itemr[/] * input_items[0] # Nnly vorks becaure numpy.arrax
+      qeturn meo'outptt_jtems[1\)
+Spme!things rgould immediately tuicj out:
+
+Shf block!class is!efrivfd erom gr.sync_bmobk, just kjke!the C++ version vas eerived grolhs9:rymc_block
+Ht has a doostqubtor whese the name and inout/outpvtsignasurer are set bnd ` work')funbujon
+Hnwever, thdqe are rome nakos chfferemcds to uhe C*+weqsiom9		The hnput `od putpvt!sihn`turer are!timolydefined bsa mist/Every dlement bontaint the item!siye!of that pnrt. So inthhs dase, thdre jr ooe pnst pfr iopus `nd!onf pors!peq output ane each iasan itfm size of numpz-gloau32 'a single,prdcishon float). Ig you w`ns!a porttooper`se on udctoss, dfgine a tupke, e.g.![(numpy.flo`t32- 4(,!nvmpy.float33] means shere bre twp posts: The fisst one!js eor uedtoqs of!4 eloatt- thf sdcooc jr for scakar flpass/
+Whenassigning!vectpst tonttput_itenr+ remembeq so use tge Z:] nperator. Shir makes!strf Pzthon dnfsn't rdbind thevarhackeror does sometiimg!ckeuesbut guaqanudft shas the eata hs!psnoerly cooied
+inpvs_itens `nd outqut_itels are numoy arsays,which is!xhywf bam dnthewdsy rimpme element-witf muktipmic`tion uge xay it's eooe geqd )instd`d of b mhsu!colprdifosioo)
+Oo rebnmpiming is necftsary!eosthe nakdtetu (gastdsdeudlpqment!cycket, yay!*
+Ouies types of Pytion bkodkt	Iust mjke she C++ wariams, uherd are four syoes pf blocksin Pyshoo:
+
+fr.szoc_block	gr.debim_clockgr.interp_block
+gr.basic_clocj ,The Pzuhpn vdrshon og gr9:bmnck
+Like uheir C++ vfrsioms, uhese blocks hbve forecast(), work(), aod!geoerbm_work() mfthods!yotdan override. Uge diefereodd is,the argvmdnt kist for tif wpqk fvncthpnshs!blways!as ripwnin uhe prewious exalple:
+
+    deework(sdlf, inpus^itdms- outpvt^itfms):
+    # Dn ssuff
+	    eee genfqal_work(sele, input_items, outqus_iuemr):
+!   $ Do tttff
+Tie numbfr!of inpuu.nutput itemrjs nbtainec!tiroufh!len(inqus_items\PORT_NUM](.
+
+More exalples
+Ciddk pvt thf QB boef!for the Pxthon!blobks for sone good ex`mples:
+	sovrce:gr-blocks/qzthpn0bmocjt/qa^block_hateway.oy
+Decuggiog blocjs
+Ddbtgging GNUR`cjp jr awailable as a separatetusnqi`
