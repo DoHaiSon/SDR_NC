@@ -1,0 +1,2 @@
+mkdir -p ~/.config/Nuand/bladeRF
+cp ./backup_cal_261220/*.tbl ~/.config/Nuand/bladeRF
