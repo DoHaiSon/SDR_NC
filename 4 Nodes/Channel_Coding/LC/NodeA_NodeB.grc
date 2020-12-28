@@ -10,7 +10,7 @@
     </param>
     <param>
       <key>window_size</key>
-      <value>2048, 2048</value>
+      <value>2160, 3072</value>
     </param>
     <param>
       <key>category</key>
@@ -30,7 +30,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(10, 10)</value>
+      <value>(8, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -93,7 +93,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(384, 11)</value>
+      <value>(392, 11)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -120,7 +120,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(912, 11)</value>
+      <value>(952, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -147,7 +147,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(560, 11)</value>
+      <value>(576, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -174,7 +174,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(472, 11)</value>
+      <value>(481, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -201,34 +201,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(328, 568)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>data_size_B</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>1024</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(176, 11)</value>
+      <value>(189, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -255,7 +228,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(264, 11)</value>
+      <value>(276, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -282,7 +255,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(800, 11)</value>
+      <value>(832, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -309,7 +282,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(664, 11)</value>
+      <value>(688, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -336,7 +309,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1152, 11)</value>
+      <value>(8, 83)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -363,7 +336,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1024, 11)</value>
+      <value>(1072, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -394,11 +367,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(328, 332)</value>
+      <value>(296, 516)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -445,11 +418,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(392, 916)</value>
+      <value>(304, 1204)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -477,7 +450,7 @@
     </param>
     <param>
       <key>packet_size</key>
-      <value>data_size_B</value>
+      <value>data_size</value>
     </param>
   </block>
   <block>
@@ -500,15 +473,15 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>filename</key>
-      <value>/home/ubuntu/Desktop/SDR_NC/2 Nodes/2_P2P_Img/lena_gray_512.txt</value>
+      <value>/home/ubuntu/Desktop/SDR_NC/4 Nodes/Channel_Coding/LC/enhanced.txt</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(72, 312)</value>
+      <value>(8, 496)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -567,15 +540,15 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>filename</key>
-      <value>/home/ubuntu/Desktop/SDR_NC/2 Nodes/2_P2P_Img/livingroom_gray_512.txt</value>
+      <value>/home/ubuntu/Desktop/SDR_NC/4 Nodes/Channel_Coding/LC/based.txt</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(136, 888)</value>
+      <value>(8, 1184)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -599,7 +572,7 @@
     </param>
     <param>
       <key>packet_size</key>
-      <value>data_size_B</value>
+      <value>data_size</value>
     </param>
     <param>
       <key>repeat</key>
@@ -634,11 +607,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(544, 288)</value>
+      <value>(480, 472)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -701,11 +674,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(608, 864)</value>
+      <value>(496, 1160)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -745,7 +718,7 @@
     </param>
     <param>
       <key>packet_size</key>
-      <value>data_size_B</value>
+      <value>data_size</value>
     </param>
   </block>
   <block>
@@ -768,11 +741,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 155)</value>
+      <value>(272, 284)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -819,11 +792,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(464, 732)</value>
+      <value>(304, 980)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -870,11 +843,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(856, 232)</value>
+      <value>(704, 320)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -917,11 +890,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(912, 792)</value>
+      <value>(728, 1016)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -964,11 +937,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(840, 155)</value>
+      <value>(784, 284)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1011,11 +984,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(912, 732)</value>
+      <value>(808, 980)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1054,11 +1027,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 147)</value>
+      <value>(272, 204)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1105,11 +1078,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(296, 724)</value>
+      <value>(304, 900)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2056,15 +2029,15 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(752, 371)</value>
+      <value>(768, 676)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>180</value>
+      <value>0</value>
     </param>
     <param>
       <key>id</key>
@@ -3071,15 +3044,15 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 944)</value>
+      <value>(784, 1356)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>180</value>
+      <value>0</value>
     </param>
     <param>
       <key>id</key>
@@ -4470,11 +4443,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(64, 660)</value>
+      <value>(8, 908)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5877,11 +5850,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(16, 83)</value>
+      <value>(8, 195)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6000,11 +5973,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1144, 152)</value>
+      <value>(1056, 312)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6039,11 +6012,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1096, 720)</value>
+      <value>(1048, 1008)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6078,11 +6051,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1008, 296)</value>
+      <value>(944, 520)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6117,11 +6090,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1136, 864)</value>
+      <value>(944, 1208)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6156,11 +6129,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(824, 296)</value>
+      <value>(768, 520)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6195,11 +6168,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(904, 864)</value>
+      <value>(736, 1208)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6250,7 +6223,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>fft_length</key>
@@ -6258,7 +6231,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(584, 75)</value>
+      <value>(480, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6333,7 +6306,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>fft_length</key>
@@ -6341,7 +6314,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(632, 652)</value>
+      <value>(496, 908)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6416,7 +6389,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>fft_length</key>
@@ -6424,11 +6397,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(984, 339)</value>
+      <value>(480, 652)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>180</value>
+      <value>0</value>
     </param>
     <param>
       <key>id</key>
@@ -6499,7 +6472,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>fft_length</key>
@@ -6507,11 +6480,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1048, 916)</value>
+      <value>(496, 1332)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>180</value>
+      <value>0</value>
     </param>
     <param>
       <key>id</key>
@@ -6566,11 +6539,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(848, 75)</value>
+      <value>(896, 252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6609,11 +6582,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(920, 660)</value>
+      <value>(912, 948)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6656,7 +6629,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(360, 411)</value>
+      <value>(296, 612)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -6695,11 +6668,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(408, 996)</value>
+      <value>(304, 1292)</value>
     </param>
     <param>
       <key>gui_hint</key>
