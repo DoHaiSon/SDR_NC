@@ -465,53 +465,6 @@
     </param>
   </block>
   <block>
-    <key>DNC2_zero_elimination</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>data_len</key>
-      <value>1024</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(984, 516)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>DNC2_zero_elimination_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>node_id</key>
-      <value>30</value>
-    </param>
-  </block>
-  <block>
     <key>DNC_LC_decoding</key>
     <param>
       <key>alias</key>
@@ -2051,7 +2004,7 @@
     </param>
     <param>
       <key>args</key>
-      <value>bladeRF=ca4c</value>
+      <value>bladeRF=4fcb</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -3450,7 +3403,7 @@
     </param>
     <param>
       <key>args</key>
-      <value>bladerf=ca4c</value>
+      <value>bladerf=3144</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -4857,7 +4810,7 @@
     </param>
     <param>
       <key>args</key>
-      <value>bladerf=2a40</value>
+      <value>bladerf=4fcb</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -5479,7 +5432,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1096, 596)</value>
+      <value>(1064, 588)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -5515,14 +5468,8 @@
     <sink_key>1</sink_key>
   </connection>
   <connection>
-    <source_block_id>DNC2_zero_elimination_0</source_block_id>
-    <sink_block_id>show_image_0_0_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
     <source_block_id>DNC_LC_decoding_0</source_block_id>
-    <sink_block_id>DNC2_zero_elimination_0</sink_block_id>
+    <sink_block_id>show_image_0_0_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
