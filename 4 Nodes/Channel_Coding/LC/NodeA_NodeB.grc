@@ -352,6 +352,108 @@
     </param>
   </block>
   <block>
+    <key>DNC2_hamming_encoder</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(280, 516)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>DNC2_hamming_encoder_0</value>
+    </param>
+    <param>
+      <key>image_size</key>
+      <value>512*512</value>
+    </param>
+    <param>
+      <key>m</key>
+      <value>3</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>packet_size</key>
+      <value>1024</value>
+    </param>
+  </block>
+  <block>
+    <key>DNC2_hamming_encoder</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(288, 1204)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>DNC2_hamming_encoder_1</value>
+    </param>
+    <param>
+      <key>image_size</key>
+      <value>512*512</value>
+    </param>
+    <param>
+      <key>m</key>
+      <value>3</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>packet_size</key>
+      <value>1024</value>
+    </param>
+  </block>
+  <block>
     <key>DNC2_image_vector_source</key>
     <param>
       <key>alias</key>
@@ -6594,10 +6696,22 @@
     </param>
   </block>
   <connection>
-    <source_block_id>DNC2_image_vector_source_0_0</source_block_id>
+    <source_block_id>DNC2_hamming_encoder_0</source_block_id>
     <sink_block_id>DNC_nodeA_controller_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>1</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>DNC2_hamming_encoder_1</source_block_id>
+    <sink_block_id>DNC_nodeB_controller_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>1</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>DNC2_image_vector_source_0_0</source_block_id>
+    <sink_block_id>DNC2_hamming_encoder_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>DNC2_image_vector_source_0_0</source_block_id>
@@ -6607,9 +6721,9 @@
   </connection>
   <connection>
     <source_block_id>DNC2_image_vector_source_0_0_0</source_block_id>
-    <sink_block_id>DNC_nodeB_controller_0</sink_block_id>
+    <sink_block_id>DNC2_hamming_encoder_1</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>1</sink_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>DNC2_image_vector_source_0_0_0</source_block_id>
