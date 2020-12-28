@@ -375,7 +375,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(504, 507)</value>
+      <value>(136, 508)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -501,7 +501,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(280, 731)</value>
+      <value>(280, 844)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -552,7 +552,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(792, 312)</value>
+      <value>(728, 264)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -599,7 +599,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(816, 936)</value>
+      <value>(712, 952)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -646,7 +646,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(784, 243)</value>
+      <value>(808, 228)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -693,7 +693,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 859)</value>
+      <value>(792, 916)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -736,7 +736,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(272, 307)</value>
+      <value>(272, 228)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -787,7 +787,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(288, 915)</value>
+      <value>(280, 908)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1730,7 +1730,7 @@
     </param>
     <param>
       <key>args</key>
-      <value>bladerf=4fcb</value>
+      <value>bladerf=ca4c</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -1738,7 +1738,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1096, 571)</value>
+      <value>(968, 516)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3129,7 +3129,7 @@
     </param>
     <param>
       <key>args</key>
-      <value>bladerf=4fcb</value>
+      <value>bladerf=ca4c</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -4536,7 +4536,7 @@
     </param>
     <param>
       <key>args</key>
-      <value>bladerf=3144</value>
+      <value>bladerf=2a40</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -4544,7 +4544,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(16, 755)</value>
+      <value>(16, 828)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4667,11 +4667,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1016, 160)</value>
+      <value>(1112, 256)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>270</value>
     </param>
     <param>
       <key>id</key>
@@ -4706,11 +4706,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1032, 904)</value>
+      <value>(1096, 752)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>90</value>
     </param>
     <param>
       <key>id</key>
@@ -4745,7 +4745,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(960, 400)</value>
+      <value>(504, 568)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4784,7 +4784,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(792, 400)</value>
+      <value>(368, 568)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4843,7 +4843,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(480, 163)</value>
+      <value>(480, 156)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4926,7 +4926,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(488, 779)</value>
+      <value>(480, 844)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5009,7 +5009,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(784, 539)</value>
+      <value>(656, 492)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5072,7 +5072,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(776, 155)</value>
+      <value>(920, 196)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5115,7 +5115,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(824, 779)</value>
+      <value>(904, 884)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5138,93 +5138,6 @@
       <value>data_block_sz*occupied_tones</value>
     </param>
   </block>
-  <block>
-    <key>wxgui_scopesink2</key>
-    <param>
-      <key>ac_couple</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(312, 448)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>wxgui_scopesink2_0</value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value></value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>t_scale</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>title</key>
-      <value>Scope Plot</value>
-    </param>
-    <param>
-      <key>trig_mode</key>
-      <value>wxgui.TRIG_MODE_AUTO</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>v_offset</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>v_scale</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>win_size</key>
-      <value></value>
-    </param>
-    <param>
-      <key>xy_mode</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>y_axis_label</key>
-      <value>Counts</value>
-    </param>
-  </block>
   <connection>
     <source_block_id>DNC_nodeR_controller_0</source_block_id>
     <sink_block_id>s4a_byte_to_bit_0</sink_block_id>
@@ -5234,12 +5147,6 @@
   <connection>
     <source_block_id>blocks_multiply_const_vxx_0_0_0</source_block_id>
     <sink_block_id>s4a_ofdm_demodulator_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_const_vxx_0_0_0</source_block_id>
-    <sink_block_id>wxgui_scopesink2_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
