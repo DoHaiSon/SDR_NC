@@ -391,7 +391,7 @@
     </param>
     <param>
       <key>image_size</key>
-      <value>512*512</value>
+      <value>256*512</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -458,7 +458,7 @@
     </param>
     <param>
       <key>image_size</key>
-      <value>512*512</value>
+      <value>256*512</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -6543,7 +6543,7 @@
     </param>
     <param>
       <key>imageheight</key>
-      <value>512</value>
+      <value>256</value>
     </param>
     <param>
       <key>imagewidth</key>
@@ -6586,7 +6586,7 @@
     </param>
     <param>
       <key>imageheight</key>
-      <value>512</value>
+      <value>256</value>
     </param>
     <param>
       <key>imagewidth</key>
