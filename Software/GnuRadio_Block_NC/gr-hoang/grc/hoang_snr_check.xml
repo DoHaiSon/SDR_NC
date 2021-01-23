@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<block>
+  <name>P2S with SNR Check</name>
+  <key>hoang_snr_check</key>
+  <category>hoang</category>
+  <import>import hoang</import>
+  <make>hoang.snr_check($para_size, $snr_thres)</make>
+
+  <param>
+    <name>Parallel Size</name>
+    <key>para_size</key>
+    <value>48</value>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>SNR Threshold</name>
+    <key>snr_thres</key>
+    <value>18</value>
+    <type>float</type>
+  </param>
+
+  <sink>
+    <name>syms_in</name>
+    <type>complex</type>
+    <vlen>$para_size</vlen>
+  </sink>
+  
+  <sink>
+    <name>SNR_in</name>
+    <type>float</type>
+  </sink>
+
+  <source>
+    <name>syms_out</name>
+    <type>complex</type>
+  </source>
+</block>

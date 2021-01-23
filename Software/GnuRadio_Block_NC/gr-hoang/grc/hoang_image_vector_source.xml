@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<block>
+  <name>[Old] Image Vector Source</name>
+  <key>hoang_image_vector_source</key>
+  <category>hoang</category>
+  <import>import hoang</import>
+  <make>hoang.image_vector_source($filename, $image_size, $repeat, $vlen, $tags)</make>
+
+	<!--<param>
+		<name>Vector</name>
+		<key>vector</key>
+		<value>(0, 0, 0)</value>
+		<type>raw</type>
+	</param>-->	
+	<param>
+		<name>File</name>
+		<key>filename</key>
+		<type>file_open</type>
+	</param>
+	<param>
+		<name>Image Size (m*n)</name>
+		<key>image_size</key>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Tags</name>
+		<key>tags</key>
+		<value>[]</value>
+		<type>raw</type>
+	</param>
+	<param>
+		<name>Repeat</name>
+		<key>repeat</key>
+		<value>False</value>
+		<type>enum</type>
+		<option>
+			<name>Yes</name>
+			<key>True</key>
+		</option>
+		<option>
+			<name>No</name>
+			<key>False</key>
+		</option>
+	</param>
+	<param>
+		<name>Vec Length</name>
+		<key>vlen</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<check>$vlen &gt; 0</check>
+	<source>
+		<name>out</name>
+		<type>byte</type>
+		<vlen>$vlen</vlen>
+	</source>
+</block>

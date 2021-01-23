@@ -32,3 +32,12 @@ cd ..
 
 cd gr-s4a
 ./make
+
+cd ..
+
+cd gr-hoang
+./make
+
+cd ..
+cd gr-PNC4TWRN
+./make

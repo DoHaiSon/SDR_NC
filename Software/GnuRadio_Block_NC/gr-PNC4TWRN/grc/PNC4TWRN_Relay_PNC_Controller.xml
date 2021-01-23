@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<block>
+  <name>Relay PNC Controller</name>
+  <key>PNC4TWRN_Relay_PNC_Controller</key>
+  <category>PNC4TWRN</category>
+  <import>import PNC4TWRN</import>
+  <make>PNC4TWRN.Relay_PNC_Controller($fft_length, $occupied_tones, $cp_length)</make>
+<callback></callback>
+	<param>
+		<name>FFT Length</name>
+		<key>fft_length</key>
+		<value>64</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Occupied Tones</name>
+		<key>occupied_tones</key>
+		<value>48</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>CP Length</name>
+		<key>cp_length</key>
+		<value>16</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>in</name>
+		<type>complex</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>complex</type>
+	</source>
+</block>

@@ -1,0 +1,30 @@
+INCLUDE(FindPkgConfig)
+PKG_CHECK_MODULES(PC_PNC4TWRN PNC4TWRN)
+
+FIND_PATH(
+    PNC4TWRN_INCLUDE_DIRS
+    NAMES PNC4TWRN/api.h
+    HINTS $ENV{PNC4TWRN_DIR}/include
+        ${PC_PNC4TWRN_INCLUDEDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/include
+          /usr/local/include
+          /usr/include
+)
+
+FIND_LIBRARY(
+    PNC4TWRN_LIBRARIES
+    NAMES gnuradio-PNC4TWRN
+    HINTS $ENV{PNC4TWRN_DIR}/lib
+        ${PC_PNC4TWRN_LIBDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/lib
+          ${CMAKE_INSTALL_PREFIX}/lib64
+          /usr/local/lib
+          /usr/local/lib64
+          /usr/lib
+          /usr/lib64
+)
+
+INCLUDE(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(PNC4TWRN DEFAULT_MSG PNC4TWRN_LIBRARIES PNC4TWRN_INCLUDE_DIRS)
+MARK_AS_ADVANCED(PNC4TWRN_LIBRARIES PNC4TWRN_INCLUDE_DIRS)
+

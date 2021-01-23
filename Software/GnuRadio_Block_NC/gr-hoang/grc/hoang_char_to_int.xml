@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<block>
+  <name>Byte To Int</name>
+  <key>hoang_char_to_int</key>
+  <category>hoang</category>
+  <import>import hoang</import>
+  <make>hoang.char_to_int()</make>
+
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>int</type>
+  </source>
+</block>

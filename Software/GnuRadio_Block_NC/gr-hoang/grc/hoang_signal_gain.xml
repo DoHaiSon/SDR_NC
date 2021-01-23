@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<block>
+  <name>Signal Gain</name>
+  <key>hoang_signal_gain</key>
+  <category>hoang</category>
+  <import>import hoang</import>
+  <make>hoang.signal_gain($gain)</make>
+  <param>
+    <name>Gain</name>
+    <key>gain</key>
+    <value>2</value>
+    <type>float</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

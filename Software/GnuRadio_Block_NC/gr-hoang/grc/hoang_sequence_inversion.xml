@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<block>
+  <name>Sequence Inversion</name>
+  <key>hoang_sequence_inversion</key>
+  <category>hoang</category>
+  <import>import hoang</import>
+  <make>hoang.sequence_inversion()</make>
+
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

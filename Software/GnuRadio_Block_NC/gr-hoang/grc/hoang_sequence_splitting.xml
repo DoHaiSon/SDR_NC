@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<block>
+  <name>Sequence Splitting</name>
+  <key>hoang_sequence_splitting</key>
+  <category>hoang</category>
+  <import>import hoang</import>
+  <make>hoang.sequence_splitting($vlen, $cut_position)</make>
+
+  <param>
+    <name>Vector Length</name>
+    <key>vlen</key>
+    <value>16</value>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>Cutting Position</name>
+    <key>cut_position</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+
+  <source>
+    <name>out_1</name>
+    <type>byte</type>
+  </source>
+
+  <source>
+    <name>out_2</name>
+    <type>byte</type>
+  </source>
+</block>

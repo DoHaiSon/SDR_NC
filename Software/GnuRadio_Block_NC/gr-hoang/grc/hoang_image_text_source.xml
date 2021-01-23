@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<block>
+  <name>Image Text Source</name>
+  <key>hoang_image_text_source</key>
+  <category>hoang</category>
+  <import>import hoang</import>
+  <make>hoang.image_text_source($filename)</make>
+  <callback>open($filename)</callback>
+  <param>
+    <name>File</name>
+    <key>filename</key>
+    <type>file_open</type>
+  </param>
+
+  <source>
+    <name>out</name>
+    <type>int</type>
+    <vlen>1</vlen>
+  </source>
+</block>

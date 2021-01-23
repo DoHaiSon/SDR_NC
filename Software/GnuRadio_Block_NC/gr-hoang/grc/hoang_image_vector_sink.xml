@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<block>
+  <name>Image Vector Sink</name>
+  <key>hoang_image_vector_sink</key>
+  <category>hoang</category>
+  <import>import hoang</import>
+  <make>hoang.image_vector_sink($filename, $vlen, $column)</make>
+
+  <param>
+    <name>File</name>
+    <key>filename</key>
+    <type>file_open</type>
+  </param>
+
+	<param>
+		<name>Vec Length</name>
+		<key>vlen</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Column Size</name>
+		<key>column</key>
+		<value>256</value>
+		<type>int</type>
+	</param>
+
+	<check>$vlen &gt; 0</check>
+	<sink>
+		<name>in</name>
+		<type>byte</type>
+		<vlen>$vlen</vlen>
+	</sink>
+</block>

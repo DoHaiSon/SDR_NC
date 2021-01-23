@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<block>
+  <name>QAM16 Mapper</name>
+  <key>hoang_qam16_mapper</key>
+  <category>hoang</category>
+  <import>import hoang</import>
+  <make>hoang.qam16_mapper()</make>
+  <sink>
+	<name>byte_in</name>
+	<type>byte</type>
+  </sink>
+  <source>
+	<name>sym_out</name>
+	<type>complex</type>
+  </source>
+</block>

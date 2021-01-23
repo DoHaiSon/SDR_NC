@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<block>
+  <name>PSK Demapper</name>
+  <key>hoang_psk_demapper</key>
+  <category>hoang</category>
+  <import>import hoang</import>
+  <make>hoang.psk_demapper($mapping_mode)</make>
+  <param>
+    <name>Mapping Mode</name>
+    <key>mapping_mode</key>
+    <value>2</value>
+    <type>enum</type>
+    <option>
+      <name>BPSK</name>
+      <key>2</key>
+    </option>
+    <option>
+      <name>QPSK</name>
+      <key>4</key>
+    </option>
+    <option>
+      <name>16PSK</name>
+      <key>16</key>
+    </option>
+    <option>
+      <name>256PSK</name>
+      <key>256</key>
+    </option>
+  </param>
+  <sink>
+    <name>sym_in</name>
+    <type>complex</type>
+  </sink>
+  <source>
+    <name>byte_out</name>
+    <type>byte</type>
+  </source>
+</block>
