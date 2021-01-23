@@ -4,7 +4,21 @@
   <key>CogNC_secondary_endnode_control</key>
   <category>CogNC</category>
   <import>import CogNC</import>
-  <make>CogNC.secondary_endnode_control($packet_size, $buffer_size, $guard_interval_downlink, $guard_interval, $end_node_id, $relay_id)</make>
+  <make>CogNC.secondary_endnode_control($session_mode, $packet_size, $buffer_size, $guard_interval_downlink, $guard_interval, $end_node_id, $relay_id)</make>
+  <param>
+	<name>Session Mode</name>
+	<key>session_mode</key>
+	<value>0</value>
+	<type>enum</type>
+	<option>
+		<name>Single</name>
+		<key>0</key>
+	</option>
+	<option>
+		<name>Multiple</name>
+		<key>1</key>
+	</option>
+  </param>
   <param>
     <name>Packet Size (bytes)</name>
     <key>packet_size</key>
@@ -45,19 +59,19 @@
     <type>int</type>
   </param>
   <sink>
-    <name>in0</name>
+    <name>rx_data</name>
     <type>byte</type>
   </sink>
   <sink>
-    <name>in1</name>
+    <name>origin_data</name>
     <type>byte</type>
   </sink>
   <source>
-    <name>out0</name>
+    <name>tx_data</name>
     <type>byte</type>
   </source>
   <source>
-    <name>out1</name>
+    <name>extracted_data</name>
     <type>byte</type>
   </source>
 </block>

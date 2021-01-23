@@ -31,5 +31,7 @@ install(FILES
     CogNC_hybrid_stream_controller.xml
     CogNC_vfdm_header_insertion.xml
     CogNC_vfdm_header_removal.xml
-    CogNC_test_block.xml DESTINATION share/gnuradio/grc/blocks
+    CogNC_test_block.xml
+    CogNC_vfdm_adaptive_precoder.xml
+    CogNC_radom_complex_generator.xml DESTINATION share/gnuradio/grc/blocks
 )

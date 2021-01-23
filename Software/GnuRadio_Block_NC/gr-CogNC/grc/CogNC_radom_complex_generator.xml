@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<block>
+  <name>Random Complex Generator</name>
+  <key>CogNC_radom_complex_generator</key>
+  <category>CogNC</category>
+  <import>import CogNC</import>
+  <make>CogNC.radom_complex_generator($vector_length, $repeat)</make>
+  <callback></callback>
+  <param>
+    <name>Vector Length</name>
+    <key>vector_length</key>
+    <type>int</type>
+  </param>
+
+<param>
+	<name>Repeat</name>
+	<key>repeat</key>
+	<value>False</value>
+	<type>enum</type>
+	<option>
+		<name>Yes</name>
+		<key>True</key>
+	</option>
+	<option>
+		<name>No</name>
+		<key>False</key>
+	</option>
+</param>
+
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

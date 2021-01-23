@@ -56,12 +56,14 @@ namespace gr {
 		ST_TX_PACKET_NO_TRANS,
 		ST_TX_XOR_DATA_TRANS,
 		ST_TX_GUARD_TRANS,
-		ST_TX_CHECK_DATA_OUT_BUFFER
+		ST_TX_CHECK_DATA_OUT_BUFFER,
+		ST_SLEEP
 	};
 	state_rx0 d_rx0_state;
 	state_rx1 d_rx1_state;
 	state_tx d_tx_state;
-
+	
+	int d_session_mode;
 	int d_packet_size;
 	int d_buffer_size;
 	int d_GI_downlink;
@@ -117,7 +119,7 @@ namespace gr {
 	void set_data_out(int xored_pos,unsigned char xored_pkt_no);
 
      public:
-      secondary_relay_control_impl(int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_nodeA_id, unsigned char end_nodeB_id, unsigned char relay_id);
+      secondary_relay_control_impl(int session_mode, int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_nodeA_id, unsigned char end_nodeB_id, unsigned char relay_id);
       ~secondary_relay_control_impl();
 
       // Where all the action really happens

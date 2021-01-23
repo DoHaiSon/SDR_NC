@@ -31,6 +31,7 @@ namespace gr {
      private:
       	enum state_tx
 	{
+		ST_TX_IDLE,
 		ST_REQUEST_TRANS,
 		ST_SESSION_NUMBER_TRANS,
 		ST_BUFFER_MANAGEMENT,
@@ -54,6 +55,7 @@ namespace gr {
 	state_tx d_tx_state;
 	state_rx d_rx_state;
 
+	int d_session_mode;
 	int d_packet_size;
 	int d_buffer_size;
 	int d_GI_downlink;
@@ -102,7 +104,7 @@ namespace gr {
 	void reset();
 
      public:
-      secondary_endnode_control_impl(int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_node_id, unsigned char relay_id);
+      secondary_endnode_control_impl(int session_mode, int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_node_id, unsigned char relay_id);
       ~secondary_endnode_control_impl();
 
       // Where all the action really happens
