@@ -40,8 +40,6 @@ list(APPEND CogNC_sources
     vfdm_header_insertion_impl.cc
     vfdm_header_removal_impl.cc
     test_block_impl.cc
-    vfdm_adaptive_precoder_impl.cc
-    radom_complex_generator_impl.cc
 )
 
 set(CogNC_sources "${CogNC_sources}" PARENT_SCOPE)

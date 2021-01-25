@@ -78,7 +78,45 @@ namespace gr {
 
 	while (ni<ninput_items && no<noutput_items)
 	{
-		switch (d_state)
+	    switch(d_state)
+	    {
+		case ST_IDLE:
+		{
+			out[no] = in[ni];
+			ni++; no++;
+			d_header_idx ++;
+			if (d_header_idx == 3)
+			{
+				d_header_idx = 0;
+				d_state = ST_HEADER_CHECK;
+			}
+			break;
+		}
+		case ST_HEADER_CHECK: // eliminate the redundant 0x00 bytes
+		{
+			ni++;
+			d_header_count ++;
+			if (d_header_count == 3)
+			{
+				d_header_count = 0;
+				d_state = ST_DATA_OUT;
+			}
+			break;
+		}
+		case ST_DATA_OUT: // read data and push to output
+		{	
+			out[no] = in[ni];
+			ni++; no++;
+			d_data_idx ++;	
+			if (d_data_idx == d_data_burst_size)
+			{
+				d_data_idx = 0;
+				d_state = ST_IDLE;
+			} 
+			break;
+		}
+	    }
+		/*switch (d_state)
 		{
 		case ST_IDLE:
 		{
@@ -128,7 +166,7 @@ namespace gr {
 			}
 			break;
 		}
-		}
+		}*/
 	}
         // Do <+signal processing+>
         // Tell runtime system how many input items we consumed on

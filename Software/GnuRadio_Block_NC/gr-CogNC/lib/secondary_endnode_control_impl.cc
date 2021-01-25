@@ -30,26 +30,27 @@ namespace gr {
   namespace CogNC {
 
     secondary_endnode_control::sptr
-    secondary_endnode_control::make(int session_mode, int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_node_id, unsigned char relay_id)
+    secondary_endnode_control::make(int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_node_id, unsigned char relay_id)
     {
       return gnuradio::get_initial_sptr
-        (new secondary_endnode_control_impl(session_mode, packet_size, buffer_size, guard_interval_downlink, guard_interval, end_node_id, relay_id));
+        (new secondary_endnode_control_impl(packet_size, buffer_size, guard_interval_downlink, guard_interval, end_node_id, relay_id));
     }
 
     /*
      * The private constructor
      */
-    secondary_endnode_control_impl::secondary_endnode_control_impl(int session_mode, int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_node_id, unsigned char relay_id)
+    secondary_endnode_control_impl::secondary_endnode_control_impl(int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_node_id, unsigned char relay_id)
       : gr::block("secondary_endnode_control",
               gr::io_signature::make2(2, 2, sizeof(unsigned char), sizeof(unsigned char)),
               gr::io_signature::make2(2, 2, sizeof(unsigned char), sizeof(unsigned char))),
-	      d_session_mode(session_mode), d_packet_size(packet_size), d_guard_interval(guard_interval), d_end_node_id(end_node_id), d_relay_node_id(relay_id), d_GI_downlink(guard_interval_downlink),
-	      d_buffer_size(buffer_size), d_next_out_packet_no(0x01), d_number_of_session_packets(0), d_session_no(0x01),       d_session_trans_index(0), d_check_session_index(0), d_check_session_count(0), d_request_index(0), d_check_rx_id_index(0), 	      d_check_rx_id_count(0), d_tx_buffer_index(0), d_load_data_index(0), d_check_confirm(false), 	
+	      d_packet_size(packet_size), d_guard_interval(guard_interval), d_end_node_id(end_node_id), d_relay_node_id(relay_id), d_GI_downlink(guard_interval_downlink),
+	      d_buffer_size(buffer_size), d_next_out_packet_no(0x01), d_number_of_session_packets(0), d_session_no(0x01),
+	      d_session_trans_index(0), d_check_session_index(0), d_check_session_count(0), d_request_index(0), d_check_rx_id_index(0), 	      d_check_rx_id_count(0), d_tx_buffer_index(0), d_load_data_index(0), d_check_confirm(false), d_load_data(false), 	
 	      d_load_packet_number(0x01), d_trans_header_index(0), d_trans_data_index(0), d_guard_index(0), 
 	      d_packets_out_index(0), d_data_out_index(0), d_xor_rx_pkt_no(0x00), d_rx_data_xored_index(0), 
 	      d_check_recv_packet_number_index(0), d_data_out(false), d_zero_trans_index(0), 
 	      d_check_end_packet_index(0), d_check_end_packet_count(0), d_number_of_packet_out(0), d_load_packet_index(0),
-	      d_tx_state(ST_TX_IDLE), d_rx_state(ST_IDLE)
+	      d_tx_state(ST_REQUEST_TRANS), d_rx_state(ST_IDLE)
     {
 	if (guard_interval<6)
 		throw std::runtime_error("Invalid parameter! Please make guard interval be greater than or equal to 6...!\n");
@@ -81,18 +82,12 @@ namespace gr {
 	d_rx_xored_packet.resize(packet_size);
 	std::fill(d_rx_xored_packet.begin(), d_rx_xored_packet.end(), 0x00);
 
-	if (session_mode == 0)
-		d_load_data = true;
-	else
-		d_load_data = false; 
-
 	for(int i = 0; i<3; i++)
 	{
 		d_request[i] = end_node_id;
 		d_request[i+3] = 0x00;
 		d_rx_packet_number[i] = 0x00;
 	}
-
     }
 
     /*
@@ -137,7 +132,7 @@ namespace gr {
         int nInputItems0 = ninput_items[0];
         int nInputItems1 = ninput_items[1];
 	int nOutputItems = noutput_items;
-	//if (nInputItems0 > 0) std::cout<<"nInputItems0 = "<<nInputItems0<<"\n";
+
         const unsigned char *in0 = (const unsigned char *) input_items[0];
         const unsigned char *in1 = (const unsigned char *) input_items[1];
         unsigned char *out0 = (unsigned char *) output_items[0];
@@ -146,18 +141,29 @@ namespace gr {
 	int ni0 = 0;
 	int ni1 = 0;
 	int no = 0;
-	//std::cout<<"test\n";	
+	
 	while(ni0<nInputItems0)
 	{
-	//std::cout<<"reach here!\n";
 	/* Loading native packets */
 	if(d_load_data==true)
 	{
+		/*if(nInputItems1==0)
+		{			
+			d_number_of_session_packets = d_load_packet_index;
+			std::cout<<"end data"<<std::endl;
+			std::cout<<"d_number_of_session_packets = "<<d_number_of_session_packets<<"\n";
+			d_load_packet_number = 0x01;
+			d_load_packet_index = 0;
+			d_load_data_index = 0;
+			d_load_data = false;
+		}
+		else
+		{*/
+			
 		if(ni1<nInputItems1)
 		{
 			if(d_load_data_index==0)
 			{
-				
 				if(in1[ni1]==0x01)
 				{
 					std::cout<<"end data"<<std::endl;
@@ -202,7 +208,6 @@ namespace gr {
 	}
 	else
 	{
-
 		/* Receiving states */
 		switch(d_rx_state)
 		{
@@ -229,15 +234,6 @@ namespace gr {
 			{
 				if(d_check_rx_id_count==3)
 				{
-					/*Added in 11 June
-					std::cout<<"rx_data: ";
-					int temp = std::min(d_packet_size+3, nInputItems0 - ni0);
-					for (int i = 0;i<temp;i++)
-					{
-						std::cout<<(int)in0[ni0+i]<<" ";
-					}
-					std::cout<<std::endl;
-					/**/
 					d_rx_state = ST_CHECK_PACKET_NUMBER;
 				}
 				else
@@ -278,13 +274,13 @@ namespace gr {
 				if(recv_pkt == true)
 				{
 					//std::cout<<"received packet no "<<(int) rx_pkt_no<<"\n";
-					if(rx_pkt_no==0x00&&d_check_confirm==false&&d_session_mode == 1)
+					if(rx_pkt_no==0x00&&d_check_confirm==false)
 					{
 						d_rx_state = ST_CHECK_SESSION_NUMBER;
 					}
 					else
 					{
-						if(rx_pkt_no!=0x00&&(d_check_confirm == true || d_session_mode == 0))
+						if(rx_pkt_no!=0x00&&d_check_confirm == true)
 						{
 							d_xor_rx_pkt_no = rx_pkt_no;
 							//std::cout<<"find out packet number: "<<(int) rx_pkt_no<<std::endl;
@@ -352,7 +348,7 @@ namespace gr {
 			}
 			if(d_check_end_packet_index==6 || d_GI_downlink == 0)
 			{
-				if(d_check_end_packet_count>=4 || d_GI_downlink == 0)
+				if(d_check_end_packet_count>4 || d_GI_downlink == 0)
 				{
 					int idx = (int)d_xor_rx_pkt_no - 1;
 					if(d_received_packet_number[idx]==0x00&&d_transmitted_packet_number[idx]==d_xor_rx_pkt_no)
@@ -402,42 +398,34 @@ namespace gr {
 				d_data_out = false;
 				if(d_number_of_packet_out==d_number_of_session_packets)
 				{
-					if (d_session_mode == 1)
+					if(d_session_no==0xFF)
 					{
-						if(d_session_no==0xFF)
-						{
-							d_session_no = 0x01;
-						}
-						else
-						{
-							d_session_no++;
-						}
-						d_number_of_packet_out = 0;
-						d_next_out_packet_no = 0x01;
-						if(d_number_of_session_packets==d_buffer_size)
-						{
-							for(int i = 0; i<d_buffer_size; i++)
-							{
-								d_loaded_packet_number[i] = 0x00;
-								d_transmitted_packet_number[i] = 0x00;
-								d_received_packet_number[i] = 0x00;
-							}
-							d_check_confirm = false;
-							d_load_data = false;
-							d_tx_state = ST_REQUEST_TRANS;
-							d_rx_state = ST_IDLE;
-							reset();
-						}
-						else
-						{
-							//std::cout<<"ST_ZERO_TRANS\n";
-							d_tx_state = ST_ZERO_TRANS;
-						}
-					}					
+						d_session_no = 0x01;
+					}
 					else
 					{
-						//std::cout<<"ST_SLEEP\n";
-						d_tx_state = ST_SLEEP;
+						d_session_no++;
+					}
+					d_number_of_packet_out = 0;
+					d_next_out_packet_no = 0x01;
+					if(d_number_of_session_packets==d_buffer_size)
+					{
+						for(int i = 0; i<d_buffer_size; i++)
+						{
+							d_loaded_packet_number[i] = 0x00;
+							d_transmitted_packet_number[i] = 0x00;
+							d_received_packet_number[i] = 0x00;
+						}
+						d_check_confirm = false;
+						d_load_data = false;
+						d_tx_state = ST_REQUEST_TRANS;
+						d_rx_state = ST_IDLE;
+						reset();
+					}
+					else
+					{
+						//std::cout<<"ST_ZERO_TRANS\n";
+						d_tx_state = ST_ZERO_TRANS;
 					}
 				}
 			}
@@ -448,23 +436,6 @@ namespace gr {
 		}
 		switch(d_tx_state)
 		{
-		case ST_TX_IDLE:
-		{		
-			if (d_session_mode == 0) 
-			{
-				if (d_load_data == false)	
-					d_tx_state = ST_BUFFER_MANAGEMENT;
-				else
-				{
-					consume (0, ni0);
-					consume (1, ni1);
-					return no;
-				}
-			}
-			else 
-				d_tx_state = ST_REQUEST_TRANS;
-			break;
-		}
 		case ST_REQUEST_TRANS:
 		{
 			//std::cout<<"ST_REQUEST_TRANS\n";
@@ -588,7 +559,7 @@ namespace gr {
 		}
 		case ST_SLEEP:
 		{
-			//just do nothing 
+			/* just do nothing */
 			break;
 		}
 		}

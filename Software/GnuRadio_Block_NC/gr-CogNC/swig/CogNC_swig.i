@@ -22,8 +22,6 @@
 #include "CogNC/vfdm_header_insertion.h"
 #include "CogNC/vfdm_header_removal.h"
 #include "CogNC/test_block.h"
-#include "CogNC/vfdm_adaptive_precoder.h"
-#include "CogNC/radom_complex_generator.h"
 %}
 
 
@@ -55,7 +53,3 @@ GR_SWIG_BLOCK_MAGIC2(CogNC, vfdm_header_insertion);
 GR_SWIG_BLOCK_MAGIC2(CogNC, vfdm_header_removal);
 %include "CogNC/test_block.h"
 GR_SWIG_BLOCK_MAGIC2(CogNC, test_block);
-%include "CogNC/vfdm_adaptive_precoder.h"
-GR_SWIG_BLOCK_MAGIC2(CogNC, vfdm_adaptive_precoder);
-%include "CogNC/radom_complex_generator.h"
-GR_SWIG_BLOCK_MAGIC2(CogNC, radom_complex_generator);

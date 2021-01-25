@@ -46,7 +46,7 @@ namespace gr {
        * class. CogNC::secondary_endnode_control::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int sessiom_mode, int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_node_id, unsigned char relay_id);
+      static sptr make(int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_node_id, unsigned char relay_id);
     };
 
   } // namespace CogNC

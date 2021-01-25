@@ -151,7 +151,7 @@ namespace gr {
 				}
 				if(d_check_next_packet_number_count>=2) // if we get ack packet
 				{
-					//std::cout<<"recv ack number "<<(int) d_next_packet_number<<"\n";
+					std::cout<<"recv ack number "<<(int) d_next_packet_number<<"\n";
 					d_check_recv_ack = true;
 					if(d_packet_number_count==255)
 					{
@@ -171,7 +171,7 @@ namespace gr {
 				{
 					if(d_check_recv_ack==true && d_check_last_packet_number_count>=2)
 					{
-						//std::cout<<"recv ack number "<<(int) d_next_packet_number-1<<"\n";
+						std::cout<<"recv ack number "<<(int) d_next_packet_number-1<<"\n";
 						d_state = ST_TRANSMIT;
 						//std::cout<<"RECEIVE ----> PACKET TRANS\n";
 					}
@@ -180,7 +180,7 @@ namespace gr {
 				{
 					if(d_beacon_count>=2) // if we get beacon
 					{
-						//std::cout<<"recv beacon \n";
+						std::cout<<"recv beacon \n";
 						if(d_check_recv_beacon==false)
 						{
 							d_state = ST_GET_ORIGIN_DATA;
@@ -256,7 +256,7 @@ namespace gr {
 			nodx_data+= (d_packet_size+6);
 			nodx_h+= d_channel_size;
 			no++;
-			//std::cout<<"Packet Transmitted Number "<<(int) d_trans_packet_number<<"\n";
+			std::cout<<"Packet Transmitted Number "<<(int) d_trans_packet_number<<"\n";
 			count++;
 			d_state = ST_RECEIVE;
 			break;

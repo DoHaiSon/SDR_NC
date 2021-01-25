@@ -30,20 +30,20 @@ namespace gr {
   namespace CogNC {
 
     secondary_relay_control::sptr
-    secondary_relay_control::make(int session_mode, int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_nodeA_id, unsigned char end_nodeB_id, unsigned char relay_id)
+    secondary_relay_control::make(int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_nodeA_id, unsigned char end_nodeB_id, unsigned char relay_id)
     {
       return gnuradio::get_initial_sptr
-        (new secondary_relay_control_impl(session_mode, packet_size, buffer_size, guard_interval_downlink, guard_interval, end_nodeA_id, end_nodeB_id, relay_id));
+        (new secondary_relay_control_impl(packet_size, buffer_size, guard_interval_downlink, guard_interval, end_nodeA_id, end_nodeB_id, relay_id));
     }
 
     /*
      * The private constructor
      */
-    secondary_relay_control_impl::secondary_relay_control_impl(int session_mode, int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_nodeA_id, unsigned char end_nodeB_id, unsigned char relay_id)
+    secondary_relay_control_impl::secondary_relay_control_impl(int packet_size, int buffer_size, int guard_interval_downlink, int guard_interval, unsigned char end_nodeA_id, unsigned char end_nodeB_id, unsigned char relay_id)
       : gr::block("secondary_relay_control",
               gr::io_signature::make2(2, 2, sizeof(unsigned char), sizeof(unsigned char)),
               gr::io_signature::make(1, 1, sizeof(unsigned char))),
-	      d_session_mode(session_mode), d_packet_size(packet_size), d_guard_interval(guard_interval), d_end_nodeA_id(end_nodeA_id), d_end_nodeB_id(end_nodeB_id), d_relay_node_id(relay_id), d_GI_downlink(guard_interval_downlink), d_buffer_size(buffer_size), d_check_nodeA_id_index(0), d_check_nodeA_id_count(0), 
+	      d_packet_size(packet_size), d_guard_interval(guard_interval), d_end_nodeA_id(end_nodeA_id), d_end_nodeB_id(end_nodeB_id), d_relay_node_id(relay_id), d_GI_downlink(guard_interval_downlink), d_buffer_size(buffer_size), d_check_nodeA_id_index(0), d_check_nodeA_id_count(0), 
 	      d_check_nodeB_id_count(0), d_check_nodeB_id_index(0), d_rx0_packet_number_index(0), d_rx1_packet_number_index(0), 
 	      d_check_rx0_req(false), d_check_rx1_req(false), d_rx0_pkt_no(0x00), d_rx1_pkt_no(0x00), d_rx0_data_index(0), 
 	      d_rx1_data_index(0), d_confirm_index(0), d_packet_out_index(0), d_node_id_out_idx(0), d_packet_no_out_idx(0), 
@@ -236,13 +236,13 @@ namespace gr {
 				}
 				if(recv_pkt == true)
 				{
-					if(rx0_pkt_no==0x00&&d_check_rx0_req==false&&d_session_mode == 1)
+					if(rx0_pkt_no==0x00&&d_check_rx0_req==false)
 					{
 						d_rx0_state = ST_RX0_CHECK_SESSION_NUMBER;
 					}
 					else 
 					{
-						if(rx0_pkt_no!=0 && (d_confirm_sent==true || d_session_mode == 0))
+						if(rx0_pkt_no!=0&&d_confirm_sent==true)
 						{
 							d_rx0_pkt_no = rx0_pkt_no;
 							//std::cout<<"branch A recved packet no "<<(int)rx0_pkt_no<<"\n ";
@@ -410,13 +410,13 @@ namespace gr {
 				}
 				if(recv_pkt == true)
 				{
-					if(rx1_pkt_no==0x00&&d_check_rx1_req==false&&d_session_mode==1)
+					if(rx1_pkt_no==0x00&&d_check_rx1_req==false)
 					{
 						d_rx1_state = ST_RX1_CHECK_SESSION_NUMBER;
 					}
 					else 
 					{
-						if(rx1_pkt_no!=0 && (d_confirm_sent==true || d_session_mode == 0))
+						if(rx1_pkt_no!=0&&d_confirm_sent==true)
 						{
 							d_rx1_pkt_no = rx1_pkt_no;
 							//std::cout<<"branch B recved packet no "<<(int)rx1_pkt_no<<"\n ";
@@ -524,21 +524,9 @@ namespace gr {
 		{
 		case ST_TX_IDLE:
 		{
-			if(d_session_mode==0)
-			{
-				for(int i = 0; i<d_buffer_size; i++)
-				{
-					if(d_packet_no_out[i]!=0x00)
-					{
-						d_check_out = true;
-						d_packet_out_index = i;
-						std::cout<<"start sending xored packet\n";
-						d_tx_state = ST_TX_NODE_ID_TRANS;
-						break;
-					}
-				}
-			}
-			if(d_session_mode==1&&d_check_rx0_req==true&&d_check_rx1_req==true)
+			//out[no] = 0x00;
+			//no++;
+			if(d_check_rx0_req==true&&d_check_rx1_req==true)
 			{
 				//std::cout<<"confirm trans"<<std::endl;
 				d_tx_state = ST_TX_CONFIRM_TRANS;
@@ -654,7 +642,7 @@ namespace gr {
 					d_tx_state = ST_TX_CHECK_DATA_OUT_BUFFER;
 				}
 				//----------------
-				if((d_session_mode==1&&d_check_rx0_req==true&&d_check_rx1_req==true&&d_check_out==true) || (d_session_mode==0&&d_check_out==true))
+				if(d_check_rx0_req==true&&d_check_rx1_req==true&&d_check_out==true)
 				{
 					int check_count = 0;
 					for(int i = 0; i<d_buffer_size; i++)
@@ -666,22 +654,17 @@ namespace gr {
 					}
 					if(check_count==d_buffer_size)
 					{
-						if(d_session_mode==0)
-							d_tx_state = ST_SLEEP;
-						else 
+						d_check_rx0_req = false;
+						d_check_rx1_req = false;
+						d_check_out = false;
+						d_check_full_xored = true;
+						if(d_expected_session_no==0xFF)
 						{
-							d_check_rx0_req = false;
-							d_check_rx1_req = false;
-							d_check_out = false;
-							d_check_full_xored = true;
-							if(d_expected_session_no==0xFF)
-							{
-								d_expected_session_no = 0x01;
-							}
-							else
-							{
-								d_expected_session_no++;
-							}
+							d_expected_session_no = 0x01;
+						}
+						else
+						{
+							d_expected_session_no++;
 						}
 						std::cout<<"d_check_full_xored = true\n";
 					}
@@ -725,11 +708,6 @@ namespace gr {
 			{
 				d_tx_state = ST_TX_NODE_ID_TRANS;
 			}
-			break;
-		}
-		case ST_SLEEP:
-		{
-			/* just do nothing */
 			break;
 		}
 		}

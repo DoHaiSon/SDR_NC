@@ -35,7 +35,5 @@ install(FILES
     hybrid_stream_controller.h
     vfdm_header_insertion.h
     vfdm_header_removal.h
-    test_block.h
-    vfdm_adaptive_precoder.h
-    radom_complex_generator.h DESTINATION include/CogNC
+    test_block.h DESTINATION include/CogNC
 )
