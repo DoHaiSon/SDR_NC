@@ -460,6 +460,49 @@
     </param>
   </block>
   <block>
+    <key>CogNC_flow_filling</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>buffer_sz</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1384, 668)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>CogNC_flow_filling_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
     <key>CogNC_hybrid_stream_control</key>
     <param>
       <key>alias</key>
@@ -475,11 +518,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1048, 656)</value>
+      <value>(1312, 656)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -514,7 +557,7 @@
     </param>
     <param>
       <key>cr_mode</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>comment</key>
@@ -526,11 +569,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1784, 404)</value>
+      <value>(1128, 652)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -538,7 +581,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>CogNC_hybrid_stream_controller_0</value>
+      <value>CogNC_hybrid_stream_controller_1</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -550,11 +593,11 @@
     </param>
     <param>
       <key>ofdm_stream_length</key>
-      <value>1</value>
+      <value>(fft_length+cp_length)*(preamble_block_rep+ofdm_data_block_sz*data_block_rep+ofdm_pilot_block_rep+silence_block_rep)</value>
     </param>
     <param>
       <key>vfdm_stream_length</key>
-      <value>1</value>
+      <value>(fft_length+precoder_length)*(preamble_block_rep+vfdm_data_block_sz*data_block_rep+pilot_block_t_sz*vfdm_pilot_block_rep+silence_block_rep)</value>
     </param>
   </block>
   <block>
@@ -723,7 +766,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>fft_length</key>
@@ -731,7 +774,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 612)</value>
+      <value>(352, 612)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1498,108 +1541,6 @@
     <param>
       <key>num_items</key>
       <value>6</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_stream_to_vector</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1544, 396)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_stream_to_vector_1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_items</key>
-      <value>(fft_length+cp_length)*(preamble_block_rep+ofdm_data_block_sz*data_block_rep+ofdm_pilot_block_rep+silence_block_rep)</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_stream_to_vector</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1584, 504)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_stream_to_vector_2</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_items</key>
-      <value>6912</value>
     </param>
     <param>
       <key>vlen</key>
@@ -2829,7 +2770,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1320, 620)</value>
+      <value>(1520, 620)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6300,7 +6241,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(944, 444)</value>
+      <value>(824, 444)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6363,7 +6304,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(880, 684)</value>
+      <value>(784, 684)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6406,11 +6347,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(72, 580)</value>
+      <value>(228, 520)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>90</value>
     </param>
     <param>
       <key>id</key>
@@ -6578,6 +6519,49 @@
     </param>
     <param>
       <key>_coordinate</key>
+      <value>(944, 636)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>s4a_serial_to_parallel_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>parallel_size</key>
+      <value>(fft_length+cp_length)*(preamble_block_rep+ofdm_data_block_sz*data_block_rep+ofdm_pilot_block_rep+silence_block_rep)</value>
+    </param>
+  </block>
+  <block>
+    <key>s4a_serial_to_parallel</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
       <value>(1352, 900)</value>
     </param>
     <param>
@@ -6621,11 +6605,54 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(256, 580)</value>
+      <value>(944, 684)</value>
     </param>
     <param>
       <key>_rotation</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>s4a_serial_to_parallel_0_1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>parallel_size</key>
+      <value>(fft_length+precoder_length)*(preamble_block_rep+vfdm_data_block_sz*data_block_rep+pilot_block_t_sz*vfdm_pilot_block_rep+silence_block_rep)</value>
+    </param>
+  </block>
+  <block>
+    <key>s4a_serial_to_parallel</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(284, 520)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>270</value>
     </param>
     <param>
       <key>id</key>
@@ -6680,7 +6707,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(656, 612)</value>
+      <value>(568, 612)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6728,10 +6755,14 @@
     </param>
   </block>
   <block>
-    <key>show_image</key>
+    <key>s4a_vfdm_precoder</key>
     <param>
       <key>alias</key>
       <value></value>
+    </param>
+    <param>
+      <key>channel_size</key>
+      <value>48</value>
     </param>
     <param>
       <key>comment</key>
@@ -6742,16 +6773,28 @@
       <value></value>
     </param>
     <param>
+      <key>cp_length</key>
+      <value>cp_length</value>
+    </param>
+    <param>
+      <key>data_block_rep</key>
+      <value>data_block_rep</value>
+    </param>
+    <param>
+      <key>data_block_sz</key>
+      <value>vfdm_data_block_sz</value>
+    </param>
+    <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
+    </param>
+    <param>
+      <key>fft_length</key>
+      <value>fft_length</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1016, 344)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value></value>
+      <value>(448, 612)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6759,17 +6802,47 @@
     </param>
     <param>
       <key>id</key>
-      <value>show_image_0</value>
+      <value>s4a_vfdm_precoder_0</value>
     </param>
     <param>
-      <key>imageheight</key>
-      <value>128</value>
+      <key>maxoutbuf</key>
+      <value>0</value>
     </param>
     <param>
-      <key>imagewidth</key>
-      <value>128</value>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>occupied_tones</key>
+      <value>occupied_tones</value>
+    </param>
+    <param>
+      <key>pilot_block_rep</key>
+      <value>vfdm_pilot_block_rep</value>
+    </param>
+    <param>
+      <key>pilot_block_t_sz</key>
+      <value>pilot_block_t_sz</value>
+    </param>
+    <param>
+      <key>preamble_block_rep</key>
+      <value>preamble_block_rep</value>
+    </param>
+    <param>
+      <key>precoder_length</key>
+      <value>precoder_length</value>
+    </param>
+    <param>
+      <key>silence_block_rep</key>
+      <value>silence_block_rep</value>
     </param>
   </block>
+  <connection>
+    <source_block_id>CogNC_flow_filling_0</source_block_id>
+    <sink_block_id>osmosdr_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
   <connection>
     <source_block_id>CogNC_hybrid_stream_control_0</source_block_id>
     <sink_block_id>osmosdr_sink_0</sink_block_id>
@@ -6777,8 +6850,8 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>CogNC_hybrid_stream_controller_0</source_block_id>
-    <sink_block_id>osmosdr_sink_0</sink_block_id>
+    <source_block_id>CogNC_hybrid_stream_controller_1</source_block_id>
+    <sink_block_id>CogNC_flow_filling_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -6814,6 +6887,12 @@
   </connection>
   <connection>
     <source_block_id>CogNC_vfdm_metrics_control_0</source_block_id>
+    <sink_block_id>s4a_vfdm_precoder_0</sink_block_id>
+    <source_key>1</source_key>
+    <sink_key>1</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>CogNC_vfdm_metrics_control_0</source_block_id>
     <sink_block_id>s4a_parallel_to_serial_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
@@ -6823,12 +6902,6 @@
     <sink_block_id>CogNC_primary_source_control_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>2</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>DNC2_image_vector_source_0</source_block_id>
-    <sink_block_id>show_image_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>analog_sig_source_x_1</source_block_id>
@@ -6877,18 +6950,6 @@
     <sink_block_id>CogNC_primary_source_control_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_stream_to_vector_1</source_block_id>
-    <sink_block_id>CogNC_hybrid_stream_controller_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_stream_to_vector_2</source_block_id>
-    <sink_block_id>CogNC_hybrid_stream_controller_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_vector_to_stream_0</source_block_id>
@@ -7036,7 +7097,7 @@
   </connection>
   <connection>
     <source_block_id>s4a_ofdm_modulator_0</source_block_id>
-    <sink_block_id>blocks_stream_to_vector_1</sink_block_id>
+    <sink_block_id>s4a_serial_to_parallel_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -7048,7 +7109,7 @@
   </connection>
   <connection>
     <source_block_id>s4a_parallel_to_serial_0</source_block_id>
-    <sink_block_id>blocks_stream_to_vector_2</sink_block_id>
+    <sink_block_id>s4a_serial_to_parallel_0_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -7077,8 +7138,20 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>s4a_serial_to_parallel_0</source_block_id>
+    <sink_block_id>CogNC_hybrid_stream_controller_1</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>s4a_serial_to_parallel_0_0</source_block_id>
     <sink_block_id>CogNC_vfdm_metrics_control_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>1</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>s4a_serial_to_parallel_0_1</source_block_id>
+    <sink_block_id>CogNC_hybrid_stream_controller_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>1</sink_key>
   </connection>
@@ -7089,8 +7162,20 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>s4a_serial_to_parallel_2</source_block_id>
+    <sink_block_id>s4a_vfdm_precoder_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>s4a_vfdm_power_scaling_0</source_block_id>
     <sink_block_id>s4a_parallel_to_serial_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>s4a_vfdm_precoder_0</source_block_id>
+    <sink_block_id>s4a_vfdm_power_scaling_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
