@@ -6727,6 +6727,49 @@
       <value>silence_block_rep</value>
     </param>
   </block>
+  <block>
+    <key>show_image</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1016, 344)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>show_image_0</value>
+    </param>
+    <param>
+      <key>imageheight</key>
+      <value>128</value>
+    </param>
+    <param>
+      <key>imagewidth</key>
+      <value>128</value>
+    </param>
+  </block>
   <connection>
     <source_block_id>CogNC_hybrid_stream_control_0</source_block_id>
     <sink_block_id>osmosdr_sink_0</sink_block_id>
@@ -6780,6 +6823,12 @@
     <sink_block_id>CogNC_primary_source_control_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>2</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>DNC2_image_vector_source_0</source_block_id>
+    <sink_block_id>show_image_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>analog_sig_source_x_1</source_block_id>
