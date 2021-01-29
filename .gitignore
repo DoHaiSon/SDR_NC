@@ -6,3 +6,4 @@ Software/GnuRadio_Block_NC/gr-DNC2/build/*
 Software/GnuRadio_Block_NC/gr-s4a/build/*
 Software/GnuRadio_Block_NC/gr-hoang/build/*
 Software/GnuRadio_Block_NC/gr-PNC4TWRN/build/*
+top_block.*

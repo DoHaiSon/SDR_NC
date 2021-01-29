@@ -446,7 +446,7 @@
     </param>
     <param>
       <key>time_out</key>
-      <value>5</value>
+      <value>20</value>
     </param>
   </block>
   <block>
