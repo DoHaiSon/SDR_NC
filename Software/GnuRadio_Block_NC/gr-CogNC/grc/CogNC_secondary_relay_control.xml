@@ -4,7 +4,21 @@
   <key>CogNC_secondary_relay_control</key>
   <category>CogNC</category>
   <import>import CogNC</import>
-  <make>CogNC.secondary_relay_control($packet_size, $buffer_size, $guard_interval_downlink, $guard_interval, $end_nodeA_id, $end_nodeB_id, $relay_id)</make>
+  <make>CogNC.secondary_relay_control($session_mode, $packet_size, $buffer_size, $guard_interval_downlink, $guard_interval, $end_nodeA_id, $end_nodeB_id, $relay_id)</make>
+  <param>
+	<name>Session Mode</name>
+	<key>session_mode</key>
+	<value>0</value>
+	<type>enum</type>
+	<option>
+		<name>Single</name>
+		<key>0</key>
+	</option>
+	<option>
+		<name>Multiple</name>
+		<key>1</key>
+	</option>
+  </param>
   <param>
     <name>Packet Size (bytes)</name>
     <key>packet_size</key>
@@ -50,15 +64,15 @@
     <type>int</type>
   </param>
   <sink>
-    <name>in0</name>
+    <name>branch1</name>
     <type>byte</type>
   </sink>
   <sink>
-    <name>in1</name>
+    <name>branch2</name>
     <type>byte</type>
   </sink>
   <source>
-    <name>out</name>
+    <name>tx_data</name>
     <type>byte</type>
   </source>
 </block>
