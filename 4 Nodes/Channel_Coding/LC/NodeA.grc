@@ -101,7 +101,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(392, 11)</value>
+      <value>(384, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -128,7 +128,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(952, 12)</value>
+      <value>(944, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -155,7 +155,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(576, 12)</value>
+      <value>(568, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -182,7 +182,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(481, 12)</value>
+      <value>(472, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -209,7 +209,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(189, 12)</value>
+      <value>(176, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -236,7 +236,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(276, 12)</value>
+      <value>(264, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -263,7 +263,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(832, 12)</value>
+      <value>(824, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -290,7 +290,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(688, 12)</value>
+      <value>(680, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -344,7 +344,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1072, 12)</value>
+      <value>(1064, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -426,7 +426,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -548,7 +548,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>filename</key>
@@ -682,7 +682,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -800,7 +800,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -898,7 +898,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -992,7 +992,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1086,7 +1086,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -3052,7 +3052,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -4451,7 +4451,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -5846,7 +5846,7 @@
     </param>
     <param>
       <key>comment</key>
-      <value></value>
+      <value>NodeA</value>
     </param>
     <param>
       <key>affinity</key>
@@ -6020,7 +6020,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -6098,7 +6098,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -6176,7 +6176,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -6314,7 +6314,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>fft_length</key>
@@ -6480,7 +6480,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>fft_length</key>
@@ -6590,7 +6590,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -6676,7 +6676,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
