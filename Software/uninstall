@@ -1,0 +1,54 @@
+cd GnuRadio_Block_NC/gr-CogNC/build
+sudo make uninstall
+
+sleep 10
+
+cd ..
+cd ..
+
+cd gr-display/build
+sudo make uninstall
+
+sleep 10
+
+cd ..
+cd ..
+
+cd gr-DNC/build
+sudo make uninstall
+
+sleep 10
+
+cd ..
+cd ..
+
+cd gr-DNC2/build
+sudo make uninstall
+
+sleep 10
+
+cd ..
+cd ..
+
+cd gr-s4a/build
+sudo make uninstall
+
+sleep 10
+
+cd ..
+cd ..
+
+cd gr-hoang/build
+sudo make uninstall
+
+sleep 10
+
+cd ..
+cd ..
+cd gr-PNC4TWRN/build
+sudo make uninstall
+
+sleep 10
+
+cd ..
+cd ..

@@ -426,7 +426,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(704, 336)</value>
+      <value>(704, 332)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -481,11 +481,11 @@
     </param>
     <param>
       <key>filename</key>
-      <value>/home/ubuntu/SDR_NC/2 Nodes/2_P2P_Img/lena_gray_512.txt</value>
+      <value>/home/ttcd/SDR_NC/2 Nodes/2_P2P_Img/lena_gray_512.txt</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(376, 368)</value>
+      <value>(376, 364)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -787,7 +787,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(240, 436)</value>
+      <value>(240, 428)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -842,7 +842,7 @@
     </param>
     <param>
       <key>freq0</key>
-      <value>2.45e9</value>
+      <value>2.55e9</value>
     </param>
     <param>
       <key>if_gain0</key>
@@ -1730,7 +1730,7 @@
     </param>
     <param>
       <key>args</key>
-      <value>bladerf=ca4c</value>
+      <value>bladerf=0</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -1861,7 +1861,7 @@
     </param>
     <param>
       <key>freq0</key>
-      <value>2.415e9</value>
+      <value>2.515e9</value>
     </param>
     <param>
       <key>gain_mode0</key>
@@ -3129,7 +3129,7 @@
     </param>
     <param>
       <key>args</key>
-      <value>bladerf=ca4c</value>
+      <value>bladerf=0</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -3137,7 +3137,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(16, 372)</value>
+      <value>(8, 356)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3397,7 +3397,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(216, 116)</value>
+      <value>(216, 108)</value>
     </param>
     <param>
       <key>_rotation</key>
