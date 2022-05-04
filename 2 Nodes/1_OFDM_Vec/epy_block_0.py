@@ -17,7 +17,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
         """arguments to this function show up as parameters in GRC"""
         gr.sync_block.__init__(
             self,
-            name='SER',   # will show up in GRC
+            name='BER',   # will show up in GRC
             in_sig=[np.byte],
             out_sig=[]
         )
@@ -41,7 +41,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
 		err = sum(err)
 		total_bit = float(len(self.bits))
 		ser = 1 - (err / total_bit)
-		print("--------------------------------------\nSER: {0}\n--------------------------------------".format(ser))
+		print("--------------------------------------\nBER: {0}\n--------------------------------------".format(ser))
 		self.bits  = []
 		self.count = 0
 	self.consume_each(len(input_items[0]))
