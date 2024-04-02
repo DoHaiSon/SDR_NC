@@ -87,8 +87,53 @@ int convolutional_decoder_impl::general_work(int noutput_items,
 
 	int ni = 0, no = 0;
 	int **mapStateInput = initializeOutputs();
-	std::string a = decode(in, ninput_items, mapStateInput);
-	std::cout << "test:" << a;
+	int trellis_size = ninput_items/2;
+	int trellis[trellis_size][4];
+	int path_metrics[trellis_size + 1][4];
+	path_metrics[0][0] = 0;
+	path_metrics[0][1] = 0;
+	path_metrics[0][2] = 0;
+	path_metrics[0][3] = 0;
+	while (ni < ninput_items)
+	{
+		int current_bits = in[ni] * 2 + in[ni + 1];
+		printf("current bit: %d\n", current_bits);
+		for (int i = 0; i < 4; i ++) {
+			printf("current state: %d\n", i);
+			int pre_state_1 = ((i << 1) | 1) & ((1 << 2) - 1);
+			printf("pre state 1: %d\n", pre_state_1);
+			int pre_state_2 = i << 1 & ((1 << 2) - 1);
+			printf("pre state 1: %d\n", pre_state_2);
+			int pm1 = branchMetric(current_bits, pre_state_1, (i >> 1) & 1, mapStateInput) + path_metrics[ni/2][pre_state_1];
+			int pm2 = branchMetric(current_bits, pre_state_2, (i >> 1) & 1, mapStateInput) + path_metrics[ni/2][pre_state_2];
+			printf("Pm1 = %d, pm2 = %d\n\n\n", pm1, pm2);
+			if (pm1 < pm2) {
+				path_metrics[ni/2 + 1][i] = pm1;
+				trellis[ni/2][i] = pre_state_1;
+			} else {
+				path_metrics[ni/2 + 1][i] = pm2;
+				trellis[ni/2][i] = pre_state_2;
+			}
+		}
+		ni += 2;
+		no ++;
+	}
+
+	int temp = path_metrics[6][0];
+	int final_state = 0;
+	for (int i = 0; i < 4; i ++) {
+		if (temp > path_metrics[trellis_size][i]) {
+			temp = path_metrics[trellis_size][i];
+			final_state = i;
+		}
+	}
+
+	printf("temp: %d, i: %d \n", temp, final_state);
+	for (int i = ni/2 - 1; i >= 0; i --) {
+		printf("i: %d, state = %d, trellis = %d\n", i, final_state, trellis[i][final_state]);
+		final_state = trellis[i][final_state];
+	}
+
 	consume_each(ni);
 	done = true;
 	return no;
@@ -104,8 +149,8 @@ int **convolutional_decoder_impl::initializeOutputs()
 		{
 			int xn2 = i & 1;
 			int xn1 = (i >> 1) & 1;
-			int codebit1 = (0 * 1 + xn2 * 1 + xn1 * 1) % 2;
-			int codebit2 = (0 * 1 + xn2 * 0 + xn1 * 1) % 2;
+			int codebit1 = (j * 1 + xn2 * 1 + xn1 * 1) % 2;
+			int codebit2 = (j * 1 + xn2 * 0 + xn1 * 1) % 2;
 			mapStateInput[i][j] = (codebit1 << 1) | codebit2;
 		}
 	}
@@ -137,90 +182,10 @@ int convolutional_decoder_impl::branchMetric(int received_bit,
 	return hammingDistance(received_bit, output);
 }
 
-std::pair<int, int> convolutional_decoder_impl::pathMetric(
-	int received_bit,
-	const std::vector<int> &prev_path_metrics,
-	int input, int **mapStateInput)
-{
-	int s = (input & ((1 << (3 - 2)) - 1)) << 1;
-	int source_state1 = s | 0;
-	int source_state2 = s | 1;
-
-	int pm1 = prev_path_metrics[source_state1];
-	if (pm1 < std::numeric_limits<int>::max())
-	{
-		pm1 += branchMetric(received_bit, source_state1, input, mapStateInput);
-	}
-	int pm2 = prev_path_metrics[source_state2];
-	if (pm2 < std::numeric_limits<int>::max())
-	{
-		pm2 += branchMetric(received_bit, source_state2, input, mapStateInput);
-	}
-
-	if (pm1 <= pm2)
-	{
-		return std::make_pair(pm1, source_state1);
-	}
-	else
-	{
-		return std::make_pair(pm2, source_state2);
-	}
-}
-
-typedef std::vector<std::vector<int> > Trellis;
-
-void convolutional_decoder_impl::updatePathMetrics(int received_bit,
-												   std::vector<int> *path_metrics,
-												   Trellis * trellis,
-												   int **mapStateInput)
-{
-	std::vector<int> new_path_metrics(path_metrics->size());
-	std::vector<int> new_trellis_column(1 << (3 - 1));
-	for (int i = 0; i < path_metrics->size(); i++)
-	{
-		std::pair<int, int> p = pathMetric(received_bit, *path_metrics, i, mapStateInput);
-		new_path_metrics[i] = p.first;
-		new_trellis_column[i] = p.second;
-	}
-
-	*path_metrics = new_path_metrics;
-	trellis->push_back(new_trellis_column);
-}
 
 std::string convolutional_decoder_impl::decode(const char *msg, int nin, int **mapStateInput)
 {
-	// Compute path metrics and generate trellis.
-	std::vector<std::vector<int> > trellis;
-	std::vector<int> path_metrics(1 << (3 - 1),
-								  std::numeric_limits<int>::max());
-	path_metrics.front() = 0;
-	for (int i = 0; i < nin; i += 2)
-	{
-		std::string current_bits(msg, i, 2);
-		// If some bits are missing, fill with trailing zeros.
-		// This is not ideal but it is the best we can do.
-		if (current_bits.size() < 2)
-		{
-			current_bits.append(
-				std::string(2 - current_bits.size(), '0'));
-		}
-		int current_int = std::atoi(current_bits.c_str());
-		updatePathMetrics(current_int, &path_metrics, &trellis, mapStateInput);
-	}
-
-	// Traceback.
-	std::string decoded;
-	int state = std::min_element(path_metrics.begin(), path_metrics.end()) -
-				path_metrics.begin();
-	for (int i = trellis.size() - 1; i >= 0; i--)
-	{
-		decoded += state >> (3 - 2) ? "1" : "0";
-		state = trellis[i][state];
-	}
-	std::reverse(decoded.begin(), decoded.end());
-
-	// Remove (constraint_ - 1) flushing bits.
-	return decoded.substr(0, decoded.size() - 3 + 1);
+	
 }
 
 } /* namespace DNC2 */
