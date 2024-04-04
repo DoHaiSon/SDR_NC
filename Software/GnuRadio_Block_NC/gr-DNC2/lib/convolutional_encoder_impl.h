@@ -35,10 +35,25 @@ private:
   std::vector<int> d_gen2;
   char generator1;
   char generator2;
+  enum state
+  {
+    ST_ENCODING,
+    ST_PACKETIZE,
+    ST_FREE
+  };
+  state d_state;
+  int d_image_size;
+  int d_packet_size;
+  int d_offset;
+  int d_packet_index;
+  int d_packet_no;
+  int d_ctrl;
 
 public:
   convolutional_encoder_impl(const std::vector<int> gen1,
-                             const std::vector<int> gen2);
+                             const std::vector<int> gen2,
+                             int image_size,
+                             int packet_size);
   ~convolutional_encoder_impl();
 
   void forecast(int noutput_items, gr_vector_int &ninput_items_required);
@@ -47,7 +62,7 @@ public:
                    gr_vector_int &ninput_items,
                    gr_vector_const_void_star &input_items,
                    gr_vector_void_star &output_items);
-  char convolution(char msg, char gen);
+  char encode(char msg);
 };
 
 } // namespace DNC2

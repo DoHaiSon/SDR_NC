@@ -18,27 +18,28 @@
  * Boston, MA 02110-1301, USA.
  */
 
-
 #ifndef INCLUDED_DNC2_CONVOLUTIONAL_ENCODER_H
 #define INCLUDED_DNC2_CONVOLUTIONAL_ENCODER_H
 
 #include <DNC2/api.h>
 #include <gnuradio/block.h>
 
-namespace gr {
-  namespace DNC2 {
+namespace gr
+{
+namespace DNC2
+{
 
-    /*!
+/*!
      * \brief <+description of block+>
      * \ingroup DNC2
      *
      */
-    class DNC2_API convolutional_encoder : virtual public gr::block
-    {
-     public:
-      typedef boost::shared_ptr<convolutional_encoder> sptr;
+class DNC2_API convolutional_encoder : virtual public gr::block
+{
+public:
+  typedef boost::shared_ptr<convolutional_encoder> sptr;
 
-      /*!
+  /*!
        * \brief Return a shared_ptr to a new instance of DNC2::convolutional_encoder.
        *
        * To avoid accidental use of raw pointers, DNC2::convolutional_encoder's
@@ -46,12 +47,13 @@ namespace gr {
        * class. DNC2::convolutional_encoder::make is the public interface for
        * creating new instances.
        */
-      static sptr make(const std::vector<int> gen1,
-			const std::vector<int> gen2);
-    };
+  static sptr make(const std::vector<int> gen1,
+                   const std::vector<int> gen2,
+                   int image_size,
+                   int packet_size);
+};
 
-  } // namespace DNC2
+} // namespace DNC2
 } // namespace gr
 
 #endif /* INCLUDED_DNC2_CONVOLUTIONAL_ENCODER_H */
-

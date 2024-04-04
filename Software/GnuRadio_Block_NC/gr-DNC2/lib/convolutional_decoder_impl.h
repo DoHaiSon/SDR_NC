@@ -35,7 +35,6 @@ class convolutional_decoder_impl : public convolutional_decoder
 	std::vector<int> d_gen2;
 	char generator1;
 	char generator2;
-	typedef std::vector<std::vector<int> > Trellis;
 
   public:
 	convolutional_decoder_impl(const std::vector<int> gen1,
@@ -49,22 +48,13 @@ class convolutional_decoder_impl : public convolutional_decoder
 					 gr_vector_int &ninput_items,
 					 gr_vector_const_void_star &input_items,
 					 gr_vector_void_star &output_items);
-	char decode(const char *bits, int nin);
 	int **initializeOutputs();
 	int hammingDistance(int x, int y);
 	int branchMetric(int received_bit,
 					 int current_state,
 					 int input,
 					 int **mapStateInput);
-	std::pair<int, int> pathMetric(
-		int received_bit,
-		const std::vector<int> &prev_path_metrics,
-		int input, int **mapStateInput);
-	void updatePathMetrics(int received_bit,
-						   std::vector<int> *path_metrics,
-						   Trellis *trellis,
-						   int **mapStateInput);
-	std::string decode(const char *msg, int nin, int **mapStateInput);
+	char decode(char codeword);
 };
 
 } // namespace DNC2

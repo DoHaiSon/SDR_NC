@@ -23,31 +23,34 @@
 
 #include <DNC2/hamming_decoder.h>
 
-namespace gr {
-  namespace DNC2 {
+namespace gr
+{
+namespace DNC2
+{
 
-    class hamming_decoder_impl : public hamming_decoder
-    {
-     private:
-      // Nothing to declare in this block.
-	int K; int N; int M;
+class hamming_decoder_impl : public hamming_decoder
+{
+private:
+  // Nothing to declare in this block.
+  int K;
+  int N;
+  int M;
 
-     public:
-      hamming_decoder_impl(int m);
-      ~hamming_decoder_impl();
+public:
+  hamming_decoder_impl(int m);
+  ~hamming_decoder_impl();
 
-      // Where all the action really happens
-      void forecast (int noutput_items, gr_vector_int &ninput_items_required);
+  // Where all the action really happens
+  void forecast(int noutput_items, gr_vector_int &ninput_items_required);
 
-      int general_work(int noutput_items,
-		       gr_vector_int &ninput_items,
-		       gr_vector_const_void_star &input_items,
-		       gr_vector_void_star &output_items);
-      char decode(char info);
-    };
+  int general_work(int noutput_items,
+                   gr_vector_int &ninput_items,
+                   gr_vector_const_void_star &input_items,
+                   gr_vector_void_star &output_items);
+  char decode(char info);
+};
 
-  } // namespace DNC2
+} // namespace DNC2
 } // namespace gr
 
 #endif /* INCLUDED_DNC2_HAMMING_DECODER_IMPL_H */
-

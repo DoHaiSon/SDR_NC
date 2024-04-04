@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <block>
-  <name>1/2 Convolutional Encoder</name>
+  <name>1/2 Convolutional Encoder </name>
   <key>DNC2_convolutional_encoder</key>
   <category>DNC2</category>
   <import>import DNC2</import>
-  <make>DNC2.convolutional_encoder($gen1, $gen2)</make>
+  <make>DNC2.convolutional_encoder($gen1, $gen2, $image_size, $packet_size)</make>
 
   <param>
     <name>Gen Metrix Path 1</name>
@@ -19,6 +19,16 @@
     <value>[1, 0, 1]</value>
     
     <type>raw</type>
+  </param>
+  <param>
+	<name>Image Size</name>
+	<key>image_size</key>
+	<type>int</type>
+  </param>
+  <param>
+	<name>Packet Size</name>
+	<key>packet_size</key>
+	<type>int</type>
   </param>
 
   <sink>
