@@ -56,6 +56,8 @@ convolutional_decoder_impl::convolutional_decoder_impl(const std::vector<int> ge
 	  generator1(0x7),
 	  generator2(0x5)
 {
+	mapStateInput = initializeOutputs();
+
 }
 
 /*
@@ -75,11 +77,6 @@ int convolutional_decoder_impl::general_work(int noutput_items,
 											 gr_vector_const_void_star &input_items,
 											 gr_vector_void_star &output_items)
 {
-	static bool done = false;
-	if (done)
-	{
-		return -1;
-	}
 	const char *in = (const char *)input_items[0];
 	char *out = (char *)output_items[0];
 	int ninput_items = ninput_items_v[0];
@@ -94,13 +91,7 @@ int convolutional_decoder_impl::general_work(int noutput_items,
 		out[no++] = c1 | (c2 << 4);
 	}
 
-	for (int i = 0; i <= 50; i++)
-	{
-		printf("Loan test encode: %d %d %d \n", in[i], out[i * 2], out[i * 2 + 1]);
-	}
-
 	consume_each(ni);
-	done = true;
 	return no;
 }
 
@@ -149,7 +140,6 @@ int convolutional_decoder_impl::branchMetric(int received_bit,
 
 char convolutional_decoder_impl::decode(char codeword)
 {
-	int **mapStateInput = initializeOutputs();
 	int trellis_size = 4;
 	int trellis[4][4];
 	int path_metrics[5][4];

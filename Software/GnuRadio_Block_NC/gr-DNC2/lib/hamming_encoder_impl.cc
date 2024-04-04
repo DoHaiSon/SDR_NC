@@ -75,11 +75,6 @@ int hamming_encoder_impl::general_work(int noutput_items,
 									   gr_vector_const_void_star &input_items,
 									   gr_vector_void_star &output_items)
 {
-	static bool done = false;
-	if (done)
-	{
-		return -1;
-	}
 	int ninput_items = ninput_items_v[0];
 	const char *in = (const char *)input_items[0];
 	char *out = (char *)output_items[0];
@@ -155,7 +150,6 @@ int hamming_encoder_impl::general_work(int noutput_items,
 		}
 	}
 	consume_each(ni);
-	done = true;
 	return no;
 }
 char hamming_encoder_impl::encode(char msg)

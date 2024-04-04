@@ -35,6 +35,7 @@ class convolutional_decoder_impl : public convolutional_decoder
 	std::vector<int> d_gen2;
 	char generator1;
 	char generator2;
+	int **mapStateInput;
 
   public:
 	convolutional_decoder_impl(const std::vector<int> gen1,

@@ -69,11 +69,6 @@ int hamming_decoder_impl::general_work(int noutput_items,
 									   gr_vector_const_void_star &input_items,
 									   gr_vector_void_star &output_items)
 {
-	static bool done = false;
-	if (done)
-	{
-		return -1;
-	}
 	int ninput_items = ninput_items_v[0]; //std::cout<<ninput_items<<std::endl;
 
 	const char *in = (const char *)input_items[0];
@@ -89,12 +84,7 @@ int hamming_decoder_impl::general_work(int noutput_items,
 		c2 = decode(in[ni++]);
 		out[no++] = c1 | (c2 << 4);
 	}
-	for (int i = 0; i < 50; i++)
-	{
-		printf("decode in in out: %d %d %d\n", in[i * 2], in[i * 2 + 1], out[i]);
-	}
 	consume_each(ni);
-	done = true;
 	return no;
 }
 char hamming_decoder_impl::decode(char codeword)
