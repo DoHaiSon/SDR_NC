@@ -7,7 +7,7 @@
   <make>DNC2.convolutional_decoder($gen1, $gen2)</make>
 
   <param>
-    <name>Gen Metrix Path 1</name>
+    <name>Gen Metrix Path</name>
     <key>gen1</key>
     <value>[1, 1, 1]</value>
     <type>raw</type>

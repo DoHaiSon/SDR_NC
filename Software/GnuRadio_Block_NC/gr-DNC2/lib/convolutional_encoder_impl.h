@@ -23,33 +23,49 @@
 
 #include <DNC2/convolutional_encoder.h>
 
-namespace gr {
-  namespace DNC2 {
+namespace gr
+{
+namespace DNC2
+{
 
-    class convolutional_encoder_impl : public convolutional_encoder
-    {
-     private:
-      std::vector<int> d_gen1;
-      std::vector<int> d_gen2;
-      char generator1;
-      char generator2;
-     public:
-      convolutional_encoder_impl(const std::vector<int> gen1,
-			const std::vector<int> gen2);
-      ~convolutional_encoder_impl();
+class convolutional_encoder_impl : public convolutional_encoder
+{
+private:
+  std::vector<int> d_gen1;
+  std::vector<int> d_gen2;
+  char generator1;
+  char generator2;
+  enum state
+  {
+    ST_ENCODING,
+    ST_PACKETIZE,
+    ST_FREE
+  };
+  state d_state;
+  int d_image_size;
+  int d_packet_size;
+  int d_offset;
+  int d_packet_index;
+  int d_packet_no;
+  int d_ctrl;
 
-      // Where all the action really happens
-      void forecast (int noutput_items, gr_vector_int &ninput_items_required);
+public:
+  convolutional_encoder_impl(const std::vector<int> gen1,
+                             const std::vector<int> gen2,
+                             int image_size,
+                             int packet_size);
+  ~convolutional_encoder_impl();
 
-      int general_work(int noutput_items,
-		       gr_vector_int &ninput_items,
-		       gr_vector_const_void_star &input_items,
-		       gr_vector_void_star &output_items);
-     char convolution(char msg, char gen);
-    };
+  void forecast(int noutput_items, gr_vector_int &ninput_items_required);
 
-  } // namespace DNC2
+  int general_work(int noutput_items,
+                   gr_vector_int &ninput_items,
+                   gr_vector_const_void_star &input_items,
+                   gr_vector_void_star &output_items);
+  char encode(char msg);
+};
+
+} // namespace DNC2
 } // namespace gr
 
 #endif /* INCLUDED_DNC2_CONVOLUTIONAL_ENCODER_IMPL_H */
-
